@@ -25,13 +25,13 @@ export default function Header() {
   };
 
   return (
-    <header className={`fixed top-0 w-full z-50 bg-background/95 backdrop-blur-sm transition-all ${scrolled ? "border-b" : ""}`}>
+    <header className={`fixed top-0 w-full z-50 bg-background/90 backdrop-blur-sm transition-all ${scrolled ? "border-b" : ""}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
               <Shield className="h-6 w-6 text-blue-600" />
-              <span className="font-bold text-xl">OptMeOut</span>
+              <span className="font-bold text-xl">Whiteout</span>
             </Link>
             <nav className="hidden md:ml-8 md:flex md:space-x-8">
               <button onClick={() => scrollToSection("features")} className="text-muted-foreground hover:text-foreground transition-colors">

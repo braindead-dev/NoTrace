@@ -32,7 +32,7 @@ export default function HowItWorks() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            How OptMeOut Works
+            How Whiteout Works
           </h2>
           <p className="mx-auto max-w-[700px] text-muted-foreground mt-4 text-lg">
             Our simple 4-step process keeps your personal information private and secure
@@ -42,7 +42,7 @@ export default function HowItWorks() {
         <div className="relative">
           <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-100 hidden md:block" />
           
-          <div className="space-y-[-35px] relative">
+          <div className="space-y-5 relative">
             {steps.map((step, index) => (
               <motion.div
                 key={index}
