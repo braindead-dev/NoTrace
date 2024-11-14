@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ClipboardCheck, Search, Shield, Bell } from "lucide-react";
+import { ClipboardCheck, Search, Eraser, Bell } from "lucide-react";
 
 const steps = [
   {
@@ -15,7 +15,7 @@ const steps = [
     description: "Our system scans hundreds of data broker websites to find your exposed information."
   },
   {
-    icon: <Shield className="h-8 w-8 text-blue-600" />,
+    icon: <Eraser className="h-8 w-8 text-blue-600" />,
     title: "Automated Removal",
     description: "We automatically submit removal requests to all identified data brokers."
   },
@@ -28,7 +28,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="w-full py-24 bg-white">
+    <section id="how-it-works" className="w-full py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -42,7 +42,7 @@ export default function HowItWorks() {
         <div className="relative">
           <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-100 hidden md:block" />
           
-          <div className="space-y-0 relative">
+          <div className="space-y-[-35px] relative">
             {steps.map((step, index) => (
               <motion.div
                 key={index}

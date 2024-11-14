@@ -17,6 +17,13 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header className={`fixed top-0 w-full z-50 bg-background/95 backdrop-blur-sm transition-all ${scrolled ? "border-b" : ""}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,15 +34,15 @@ export default function Header() {
               <span className="font-bold text-xl">OptMeOut</span>
             </Link>
             <nav className="hidden md:ml-8 md:flex md:space-x-8">
-              <Link href="#features" className="text-muted-foreground hover:text-foreground transition-colors">
+              <button onClick={() => scrollToSection("features")} className="text-muted-foreground hover:text-foreground transition-colors">
                 Features
-              </Link>
-              <Link href="#how-it-works" className="text-muted-foreground hover:text-foreground transition-colors">
+              </button>
+              <button onClick={() => scrollToSection("how-it-works")} className="text-muted-foreground hover:text-foreground transition-colors">
                 How It Works
-              </Link>
-              <Link href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors">
+              </button>
+              <button onClick={() => scrollToSection("pricing")} className="text-muted-foreground hover:text-foreground transition-colors">
                 Pricing
-              </Link>
+              </button>
             </nav>
           </div>
           <div className="flex items-center space-x-4">
