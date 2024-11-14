@@ -20,7 +20,7 @@ export default function Hero() {
             <span className="text-blue-600 block mt-2">Reclaim Your Privacy</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-            Take control of your personal data. Automatically remove and <br /> protect your sensitive information with OptMeOut.
+            Take control of your personal data. Automatically remove and protect your sensitive information with OptMeOut.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button size="lg" className="px-8">
