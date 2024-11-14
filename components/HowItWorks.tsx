@@ -32,7 +32,7 @@ export default function HowItWorks() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            How Whiteout Works
+            How OptMeOut Works
           </h2>
           <p className="mx-auto max-w-[700px] text-muted-foreground mt-4 text-lg">
             Our simple 4-step process keeps your personal information private and secure

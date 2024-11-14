@@ -31,7 +31,7 @@ export default function Header() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
               <Shield className="h-6 w-6 text-blue-600" />
-              <span className="font-bold text-xl">Whiteout</span>
+              <span className="font-bold text-xl">OptMeOut</span>
             </Link>
             <nav className="hidden md:ml-8 md:flex md:space-x-8">
               <button onClick={() => scrollToSection("features")} className="text-muted-foreground hover:text-foreground transition-colors">

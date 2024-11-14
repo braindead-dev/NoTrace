@@ -36,7 +36,7 @@ export default function Footer() {
           <div className="col-span-2">
             <Link href="/" className="flex items-center space-x-2">
               <Shield className="h-6 w-6 text-blue-600" />
-              <span className="font-bold text-xl">Whiteout</span>
+              <span className="font-bold text-xl">OptMeOut</span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground max-w-xs">
               Protecting your digital privacy with advanced data removal and monitoring services.
@@ -82,7 +82,7 @@ export default function Footer() {
         <div className="mt-8 pt-8 border-t">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Whiteout. All rights reserved.
+              © {new Date().getFullYear()} OptMeOut. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link href="#" className="text-muted-foreground hover:text-foreground">

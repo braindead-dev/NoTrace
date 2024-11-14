@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Whiteout.so - Take Control of Your Digital Privacy',
+  title: 'OptMeOut - Take Control of Your Digital Privacy',
   description: 'Automatically remove and monitor your personal information from data broker websites. Protect your privacy with our comprehensive removal service.',
 };
 
