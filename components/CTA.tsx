@@ -6,7 +6,7 @@ import { Shield } from "lucide-react";
 
 export default function CTA() {
   return (
-    <section className="w-full py-24 bg-blue-600">
+    <section className="w-full py-16 bg-blue-600">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -20,15 +20,15 @@ export default function CTA() {
             Ready to Protect Your Privacy?
           </h2>
           <p className="mx-auto max-w-[700px] text-blue-100 mt-4 text-lg">
-            Join thousands of people who trust OptMeOut to keep their personal information private and secure.
+            Join thousands who trust OptMeOut to keep their information private and secure.
           </p>
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50">
               Start Your Protection
             </Button>
           </div>
-          <p className="mt-8 text-sm text-blue-100">
-            30-day money-back guarantee • No credit card required • Cancel anytime
+          <p className="mt-5 text-sm text-blue-200">
+            30-day money-back guarantee • Cancel anytime
           </p>
         </motion.div>
       </div>
