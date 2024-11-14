@@ -16,19 +16,20 @@ export default function Hero() {
           className="text-center"
         >
           <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-6xl">
-            Take Back Control of Your
-            <span className="text-blue-600"> Digital Privacy</span>
+            Erase Your Digital Footprint
+            <span className="text-blue-600 block mt-2">Reclaim Your Privacy</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-            Automatically remove and monitor your personal information from data broker websites. 
-            Protect your privacy with our comprehensive removal service.
+            Fight back against data brokers with our powerful privacy platform. 
+            Automatically detect, remove, and shield your personal information from 
+            the internet's prying eyes.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button size="lg" className="px-8">
-              Start Protection
+              Start Free Protection
             </Button>
             <Button variant="outline" size="lg">
-              Learn More
+              How It Works
             </Button>
           </div>
           
@@ -37,22 +38,22 @@ export default function Hero() {
               <div className="rounded-full bg-blue-100 p-3">
                 <Shield className="h-6 w-6 text-blue-600" />
               </div>
-              <h3 className="mt-4 text-lg font-semibold">Continuous Protection</h3>
-              <p className="mt-2 text-muted-foreground">24/7 monitoring of your digital presence</p>
+              <h3 className="mt-4 text-lg font-semibold">Total Control</h3>
+              <p className="mt-2 text-muted-foreground">Your data, your rules, your privacy</p>
             </div>
             <div className="flex flex-col items-center">
               <div className="rounded-full bg-blue-100 p-3">
                 <Lock className="h-6 w-6 text-blue-600" />
               </div>
-              <h3 className="mt-4 text-lg font-semibold">Secure & Private</h3>
-              <p className="mt-2 text-muted-foreground">Bank-level encryption for your data</p>
+              <h3 className="mt-4 text-lg font-semibold">Data Scrubbing</h3>
+              <p className="mt-2 text-muted-foreground">Advanced removal technology</p>
             </div>
             <div className="flex flex-col items-center">
               <div className="rounded-full bg-blue-100 p-3">
                 <Eye className="h-6 w-6 text-blue-600" />
               </div>
-              <h3 className="mt-4 text-lg font-semibold">Full Transparency</h3>
-              <p className="mt-2 text-muted-foreground">Track removal progress in real-time</p>
+              <h3 className="mt-4 text-lg font-semibold">24/7 Vigilance</h3>
+              <p className="mt-2 text-muted-foreground">Continuous monitoring & protection</p>
             </div>
           </div>
         </motion.div>

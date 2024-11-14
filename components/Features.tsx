@@ -39,8 +39,8 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="py-24 bg-slate-50">
-      <div className="container px-4 md:px-6">
+    <section className="w-full py-24 bg-slate-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
             Comprehensive Privacy Protection
@@ -59,7 +59,7 @@ export default function Features() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="p-6 hover:shadow-lg transition-shadow">
+              <Card className="p-6 hover:shadow-lg transition-shadow h-full">
                 <div className="rounded-full bg-blue-100 w-12 h-12 flex items-center justify-center mb-4">
                   {feature.icon}
                 </div>

@@ -6,12 +6,14 @@ import CTA from '@/components/CTA';
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <Hero />
-      <Features />
-      <HowItWorks />
-      <Pricing />
-      <CTA />
+    <main className="flex min-h-screen flex-col items-center">
+      <div className="w-full">
+        <Hero />
+        <Features />
+        <HowItWorks />
+        <Pricing />
+        <CTA />
+      </div>
     </main>
   );
 }
