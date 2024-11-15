@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Shield, Lock, Eye } from "lucide-react";
+import { Shield, Eraser, Eye } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Hero() {
@@ -16,11 +16,12 @@ export default function Hero() {
           className="text-center"
         >
           <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-6xl">
-            Erase Your Digital Footprint
+            Clean Your Digital Footprint
             <span className="text-blue-600 block mt-2">Reclaim Your Privacy</span>
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-            Take control of your personal data. Automatically remove and protect your sensitive information with OptMeOut.
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-500">
+            Effortlessly find and remove your personal information off the internet. 
+            We automatically monitor and strike down threats across the broadest coverage of data brokers available.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button size="lg" className="px-8">
@@ -41,7 +42,7 @@ export default function Hero() {
             </div>
             <div className="flex flex-col items-center">
               <div className="rounded-full bg-blue-100 p-3">
-                <Lock className="h-6 w-6 text-blue-600" />
+                <Eraser className="h-6 w-6 text-blue-600" />
               </div>
               <h3 className="mt-4 text-lg font-semibold">Data Scrubbing</h3>
               <p className="mt-2 text-muted-foreground">Advanced removal technology</p>
