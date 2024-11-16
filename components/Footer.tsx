@@ -3,9 +3,9 @@ import { Shield } from "lucide-react";
 
 const footerLinks = {
   product: [
-    { name: "Features", href: "#" },
-    { name: "How It Works", href: "#" },
-    { name: "Pricing", href: "#" },
+    { name: "Features", href: "#features" },
+    { name: "How It Works", href: "#how-it-works" },
+    { name: "Pricing", href: "#pricing" },
     { name: "Security", href: "#" },
   ],
   company: [
@@ -15,8 +15,8 @@ const footerLinks = {
     { name: "Contact", href: "#" },
   ],
   legal: [
-    { name: "Privacy Policy", href: "#" },
-    { name: "Terms of Service", href: "#" },
+    { name: "Privacy Policy", href: "/privacy" },
+    { name: "Terms of Service", href: "/terms" },
     { name: "Cookie Policy", href: "#" },
     { name: "GDPR", href: "#" },
   ],
