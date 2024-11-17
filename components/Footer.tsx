@@ -9,7 +9,7 @@ const footerLinks = {
     { name: "Security", href: "#" },
   ],
   company: [
-    { name: "About Us", href: "#" },
+    { name: "About Us", href: "/about" },
     { name: "Blog", href: "#" },
     { name: "Careers", href: "#" },
     { name: "Contact", href: "#" },
