@@ -127,17 +127,26 @@ export default function Pricing() {
 
           <TabsContent value="monthly" className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <motion.div>
-                <PricingCard plan={plans.free} />
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >                <PricingCard plan={plans.free} />
               </motion.div>
-              <motion.div>
-                <PricingCard 
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >                <PricingCard 
                   plan={plans.individual.monthly} 
                   variant="pro"
                 />
               </motion.div>
-              <motion.div>
-                <PricingCard 
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >                <PricingCard 
                   plan={plans.family.monthly} 
                   variant="family"
                 />
