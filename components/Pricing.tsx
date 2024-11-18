@@ -117,7 +117,6 @@ export default function Pricing() {
             Choose the perfect plan for your privacy needs
           </p>
         </div>
-
         <Tabs defaultValue="monthly" className="w-full">
           <div className="flex flex-col items-center space-y-4 mb-8">
             <TabsList className="grid w-full max-w-md grid-cols-2">
