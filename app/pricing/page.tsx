@@ -1,6 +1,5 @@
 "use client";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Shield } from "lucide-react";
 import { motion } from "framer-motion";
@@ -106,34 +105,22 @@ export default function PricingPage() {
         </div>
       </section>
 
-
-
-      {/* FAQ Section */}
-      <section className="py-16 bg-slate-50">
+        {/* FAQ Section */}
+      <section className="pt-10 pb-28 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
-            <p className="mt-4 text-lg text-gray-600">Have questions? We're here to help.</p>
-          </div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <Accordion type="single" collapsible className="w-full space-y-4">
-              {faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="bg-white rounded-lg px-6">
-                  <AccordionTrigger className="text-left hover:no-underline">
-                    <span className="text-lg font-medium">{faq.question}</span>
-                  </AccordionTrigger>
-                  <AccordionContent className="text-gray-600">
-                    {faq.answer}
-                  </AccordionContent>
+            <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-900">
+                Frequently Asked Questions
+            </h2>
+            </div>
+            <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`}>
+                <AccordionTrigger>{faq.question}</AccordionTrigger>
+                <AccordionContent>{faq.answer}</AccordionContent>
                 </AccordionItem>
-              ))}
+            ))}
             </Accordion>
-          </motion.div>
         </div>
       </section>
     </div>

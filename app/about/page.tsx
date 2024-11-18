@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Shield, Lock, Search, RefreshCw, Check, Linkedin, Mail } from "lucide-react";
+import { Shield, Lock, Search, RefreshCw, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
