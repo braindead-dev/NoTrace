@@ -30,7 +30,7 @@ export default function PricingCard({
             </div>
           )}
     
-          <div className="mb-8">
+          <div className="mb-6">
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-2xl font-bold">{plan.name}</h3>
               {variant && (
@@ -44,14 +44,15 @@ export default function PricingCard({
               )}
             </div>
     
-            <div className="flex items-baseline mb-4">
-              <span className="text-4xl font-bold">${plan.price}</span>
-              <span className="ml-1 text-muted-foreground">/month</span>
+            <div className="mb-4">
+              <div className="flex items-baseline">
+                <span className="text-4xl font-bold">${plan.price}</span>
+                <span className="ml-1 text-muted-foreground">/month</span>
+              </div>
               {billing === "annual" && (
-                <span className="ml-2 text-sm text-muted-foreground">(billed annually)</span>
+                <div className="text-xs text-muted-foreground mt-2">(billed annually)</div>
               )}
             </div>
-    
             <p className="text-muted-foreground">{plan.description}</p>
           </div>
     
@@ -61,7 +62,7 @@ export default function PricingCard({
                 <li key={index} className="flex items-start">
                   <Check 
                     className={`h-5 w-5 mr-2 flex-shrink-0 mt-0.5 ${
-                      plan.price === "0" ? "text-blue-400" : "text-blue-600"
+                      plan.price === "0" ? "text-gray-500" : "text-blue-600"
                     }`} 
                   />
                   <span>{feature}</span>
@@ -71,7 +72,7 @@ export default function PricingCard({
           </div>
     
           <Button 
-            className={`w-full ${plan.price !== "0" ? 'bg-blue-700 hover:bg-blue-800' : 'bg-zinc-600 hover:bg-zinc-700'}`}
+            className={`w-full ${plan.price !== "0" ? 'bg-blue-700 hover:bg-blue-800' : 'bg-gray-500 hover:bg-gray-600'}`}
           >
             {plan.price === "0" ? "Start Free" : "Get Started"}
           </Button>

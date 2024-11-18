@@ -1,12 +1,12 @@
 "use client";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import PricingCard from "@/components/PricingCard";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Shield } from "lucide-react";
 import { motion } from "framer-motion";
+import PricingTabs from "@/components/pricing/PricingTabs";
 
-import { plans, features } from "@/components/Pricing";
+import { features } from "@/components/Pricing";
 
 const faqs = [
   {
@@ -69,72 +69,7 @@ export default function PricingPage() {
             viewport={{ once: true }}
             className="flex items-start space-x-4 bg-white p-6 rounded-lg"
         >
-            <Tabs defaultValue="monthly" className="w-full">
-                <div className="flex flex-col items-center space-y-4 mb-8">
-                    <TabsList className="grid w-full max-w-md grid-cols-2">
-                    <TabsTrigger value="monthly">Monthly Billing</TabsTrigger>
-                    <TabsTrigger value="annual">Annual Billing</TabsTrigger>
-                    </TabsList>
-                </div>
-
-                <TabsContent value="monthly" className="space-y-8">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                    >
-                        <PricingCard plan={plans.free} />
-                    </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                    >                        <PricingCard 
-                        plan={plans.individual.monthly} 
-                        variant="pro"
-                        />
-                    </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                    >                        <PricingCard 
-                        plan={plans.family.monthly} 
-                        variant="family"
-                        />
-                    </motion.div>
-                    </div>
-                </TabsContent>
-
-                <TabsContent value="annual" className="space-y-8">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                    >
-                        <PricingCard 
-                        plan={plans.individual.annual} 
-                        variant="pro"
-                        billing="annual"
-                        />
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.1 }}
-                    >
-                        <PricingCard 
-                        plan={plans.family.annual} 
-                        variant="family"
-                        billing="annual"
-                        />
-                    </motion.div>
-                    </div>
-                </TabsContent>
-            </Tabs>
+            <PricingTabs />
         </motion.div>
         </div>
       </section>
