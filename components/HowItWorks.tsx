@@ -42,7 +42,7 @@ export default function HowItWorks() {
         <div className="relative">
           <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-100 hidden md:block" />
           
-          <div className="space-y-5 relative">
+          <div className="relative space-y-5 md:space-y-[-70px]">
             {steps.map((step, index) => (
               <motion.div
                 key={index}
@@ -54,7 +54,7 @@ export default function HowItWorks() {
               >
                 <div className={`md:flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                   <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
-                    <div className="bg-white p-6 rounded-lg shadow-lg">
+                    <div className="bg-white p-6 rounded-lg shadow-md border-2 border-gray-100">
                       <div className="rounded-full bg-blue-100 w-16 h-16 flex items-center justify-center mb-4">
                         {step.icon}
                       </div>

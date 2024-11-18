@@ -39,7 +39,7 @@ export default function PricingPage() {
   return (
     <div className="min-h-screen pt-16 bg-background">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-b from-blue-50 to-white ">
+      <section className="relative pt-20 bg-gradient-to-b from-blue-50 to-white ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
