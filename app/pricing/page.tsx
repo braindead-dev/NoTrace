@@ -1,39 +1,12 @@
 "use client";
 
-
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import PricingCard from "@/components/PricingCard";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Shield } from "lucide-react";
 import { motion } from "framer-motion";
 
-const features = [
-    {
-      title: "Automated Data Broker Removal",
-      description: "Automatically remove your data from broker websites"
-    },
-    {
-      title: "Real-time Monitoring",
-      description: "Continuous scanning for new data exposures"
-    },
-    {
-      title: "Dark Web Scanning",
-      description: "Monitor dark web for your personal information"
-    },
-    {
-      title: "Identity Theft Protection",
-      description: "Advanced protection against identity theft"
-    },
-    {
-      title: "24/7 Expert Support",
-      description: "Round-the-clock access to privacy experts"
-    },
-    {
-      title: "Custom Removal Requests",
-      description: "Request removal from specific websites"
-    }
-  ];  
+import { plans, features } from "@/components/Pricing";
 
 const faqs = [
   {
@@ -61,80 +34,6 @@ const faqs = [
     answer: "Absolutely. We use bank-level encryption and security measures to protect your data. We never share your information with third parties, and our systems are regularly audited for security compliance. Your privacy and security are our top priority."
   }
 ];
-
-const plans = {
-    free: {
-      name: "Free",
-      price: "0",
-      description: "Basic privacy monitoring for individuals",
-      features: [
-        "Monthly data broker scan",
-        "Basic privacy report",
-        "Email notifications",
-        "Personal info exposure alerts",
-        "Privacy risk assessment"
-      ]
-    },
-    individual: {
-      monthly: {
-        name: "Pro",
-        price: "7.99",
-        description: "Complete privacy protection for individuals",
-        features: [
-          "Weekly data broker scans",
-          "Complete automated removal service",
-          "Real-time alerts",
-          "24/7 dedicated support",
-          "Custom removal requests",
-          "Complete privacy report",
-          "Dark web monitoring",
-          "Identity theft protection"
-        ]
-      },
-      annual: {
-        name: "Pro",
-        price: "4.99",
-        savings: "38%",
-        description: "Complete privacy protection for individuals",
-        features: [
-          "Weekly data broker scans",
-          "Complete automated removal service",
-          "Real-time alerts",
-          "24/7 dedicated support",
-          "Custom removal requests",
-          "Complete privacy report",
-          "Dark web monitoring",
-          "Identity theft protection"
-        ]
-      }
-    },
-    family: {
-      monthly: {
-        name: "Family",
-        price: "10.99",
-        description: "Complete protection for up to 5 family members",
-        features: [
-          "Everything in Pro plan",
-          "Up to 5 family members",
-          "Family dashboard",
-          "Family privacy assessment"
-        ]
-      },
-      annual: {
-        name: "Family",
-        price: "7.99",
-        savings: "27%",
-        description: "Complete protection for up to 5 family members",
-        features: [
-          "Everything in Pro plan",
-          "Up to 5 family members",
-          "Family dashboard",
-          "Family privacy assessment"
-        ]
-      }
-    }
-  };
-  
 
 export default function PricingPage() {
   return (

@@ -5,7 +5,7 @@ import { Shield } from "lucide-react";
 import { motion } from "framer-motion";
 import PricingCard from "@/components/PricingCard";
 
-const features = [
+export const features = [
   {
     title: "Automated Data Broker Removal",
     description: "Automatically remove your data from broker websites"
@@ -32,7 +32,7 @@ const features = [
   }
 ];
 
-const plans = {
+export const plans = {
   free: {
     name: "Free",
     price: "0",

@@ -59,7 +59,11 @@ export default function PricingCard({
             <ul className="space-y-4 mb-8">
               {plan.features.map((feature: string, index: number) => (
                 <li key={index} className="flex items-start">
-                  <Check className="h-5 w-5 text-blue-600 mr-2 flex-shrink-0 mt-0.5" />
+                  <Check 
+                    className={`h-5 w-5 mr-2 flex-shrink-0 mt-0.5 ${
+                      plan.price === "0" ? "text-blue-400" : "text-blue-600"
+                    }`} 
+                  />
                   <span>{feature}</span>
                 </li>
               ))}
@@ -67,7 +71,7 @@ export default function PricingCard({
           </div>
     
           <Button 
-            className={`w-full ${popular ? 'bg-blue-600 hover:bg-blue-700' : ''}`}
+            className={`w-full ${plan.price !== "0" ? 'bg-blue-700 hover:bg-blue-800' : 'bg-zinc-600 hover:bg-zinc-700'}`}
           >
             {plan.price === "0" ? "Start Free" : "Get Started"}
           </Button>
