@@ -60,10 +60,16 @@ export default function Header() {
           </div>
 
           <div className="flex items-center gap-x-4 ml-auto">
-            <Button variant="ghost" size="sm">
-              Log in
-            </Button>
-            <Button size="sm">Get Started</Button>
+            <Link href="/login" passHref>
+              <Button variant="ghost" size="sm">
+                Log in
+              </Button>
+            </Link>
+            <Link href="/signup" passHref>
+              <Button size="sm">
+                Get Started
+              </Button>
+            </Link>
           </div>
         </div>
       </nav>
