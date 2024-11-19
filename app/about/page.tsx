@@ -10,6 +10,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import FAQ from "@/components/FAQ";
 
 const teamMembers = [
   {
@@ -174,7 +175,6 @@ export default function AboutPage() {
                 <Card className="text-center overflow-hidden">
                   <CardContent className="pt-6">
                     <div className="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={member.image}
                         alt={member.name}
@@ -230,35 +230,7 @@ export default function AboutPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-900">
-              Frequently Asked Questions
-            </h2>
-          </div>
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1">
-              <AccordionTrigger>How does OptMeOut protect my privacy?</AccordionTrigger>
-              <AccordionContent>
-                We use advanced encryption and secure processes to protect your data while removing your information from data broker websites.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>How long does the removal process take?</AccordionTrigger>
-              <AccordionContent>
-                Most removals are completed within 30-45 days, though some data brokers may take longer to process requests.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger>What information do you need from me?</AccordionTrigger>
-              <AccordionContent>
-                We only collect the minimum information necessary to process removal requests, typically including your name, current address, and previous addresses.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </div>
-      </section>
+      <FAQ />
 
       {/* CTA Section */}
       <section className="py-24 bg-blue-600">
