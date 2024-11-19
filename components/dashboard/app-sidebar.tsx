@@ -3,19 +3,18 @@
 import * as React from "react"
 import {
   BookOpen,
-  Bot,
+  UserCog,
   Shield,
   Frame,
   LifeBuoy,
   Map,
   PieChart,
   Send,
-  Settings2,
-  SquareTerminal,
+  FileChartColumnIncreasing,
+  LayoutDashboard,
 } from "lucide-react"
 
 import { NavMain } from "@/components/dashboard/nav-main"
-import { NavProjects } from "@/components/dashboard/nav-projects"
 import { NavSecondary } from "@/components/dashboard/nav-secondary"
 import { NavUser } from "@/components/dashboard/nav-user"
 import {
@@ -36,9 +35,9 @@ const data = {
   },
   navMain: [
     {
-      title: "Playground",
+      title: "Dashboard",
       url: "#",
-      icon: SquareTerminal,
+      icon: LayoutDashboard,
       isActive: true,
       items: [
         {
@@ -56,9 +55,9 @@ const data = {
       ],
     },
     {
-      title: "Models",
+      title: "Manage Profile",
       url: "#",
-      icon: Bot,
+      icon: UserCog,
       items: [
         {
           title: "Genesis",
@@ -98,9 +97,9 @@ const data = {
       ],
     },
     {
-      title: "Settings",
+      title: "Reports",
       url: "#",
-      icon: Settings2,
+      icon: FileChartColumnIncreasing,
       items: [
         {
           title: "General",
@@ -133,23 +132,6 @@ const data = {
       icon: Send,
     },
   ],
-  projects: [
-    {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
-    },
-    {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
-    },
-  ],
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -174,7 +156,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
