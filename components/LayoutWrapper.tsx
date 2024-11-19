@@ -8,7 +8,7 @@ import Footer from '@/components/Footer';
 export default function LayoutWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
-  const noHeaderFooterRoutes = ['/login', '/signup'];
+  const noHeaderFooterRoutes = ['/login', '/signup', '/dashboard'];
 
   const shouldShowHeaderFooter = !noHeaderFooterRoutes.includes(pathname);
 
