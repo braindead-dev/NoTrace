@@ -71,7 +71,7 @@ export function NavUser({
               <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
                 <Avatar className="h-8 w-8 rounded-lg">
                   <AvatarImage src={user.avatar} alt={user.name} />
-                  <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+                  <AvatarFallback className="rounded-lg">HW</AvatarFallback>
                 </Avatar>
                 <div className="grid flex-1 text-left text-sm leading-tight">
                   <span className="truncate font-semibold">{user.name}</span>
@@ -82,28 +82,28 @@ export function NavUser({
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <DropdownMenuItem>
-                <Sparkles className="h-4 w-4" />
+                <Sparkles className="h-4 w-4 mr-2" />
                 Upgrade to Pro
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <DropdownMenuItem>
-                <BadgeCheck className="h-4 w-4" />
+                <BadgeCheck className="h-4 w-4 mr-2" />
                 Account
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <CreditCard className="h-4 w-4" />
+                <CreditCard className="h-4 w-4 mr-2" />
                 Billing
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <Bell className="h-4 w-4" />
+                <Bell className="h-4 w-4 mr-2" />
                 Notifications
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuItem>
-              <LogOut className="h-4 w-4" />
+              <LogOut className="h-4 w-4 mr-2" />
               Log out
             </DropdownMenuItem>
           </DropdownMenuContent>
