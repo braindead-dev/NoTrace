@@ -14,7 +14,7 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar"
 
-export default function Page() {
+export default function Dashboard() {
   return (
     <SidebarProvider className="bg-gray-50">
       <AppSidebar />
