@@ -4,20 +4,14 @@ import { motion } from "framer-motion";
 import { Shield, Lock, Search, RefreshCw, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import FAQ from "@/components/FAQ";
 
 const teamMembers = [
   {
-    name: "Sarah Chen",
-    role: "CEO & Co-founder",
+    name: "Henry Wang",
+    role: "CEO & Founder",
     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
-    linkedin: "#"
+    linkedin: "https://www.linkedin.com/in/henry00c/"
   },
   {
     name: "Michael Rodriguez",
