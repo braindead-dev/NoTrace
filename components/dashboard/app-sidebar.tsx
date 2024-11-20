@@ -38,6 +38,11 @@ const data = {
       isActive: true,
     },
     {
+      title: "Reports",
+      url: "#",
+      icon: FileChartColumnIncreasing,
+    },
+    {
       title: "Manage Profile",
       url: "#",
       icon: UserCog,
@@ -46,11 +51,6 @@ const data = {
       title: "Manage Family",
       url: "#",
       icon: Users,
-    },
-    {
-      title: "Reports",
-      url: "#",
-      icon: FileChartColumnIncreasing,
     },
   ],
   navSecondary: [
