@@ -8,12 +8,9 @@ const Logo = ({ className, ...props }) => (
     className={className}
     {...props}
     >
-    <path d="M0 12.728H11.272V24H0Z" />
-    <path d="M0 17.667h16.214V24H0z" />
-    <path d="M0 7.779h6.302V24H0z" />
-    <path d="M14.507 9.867H20.835V16.195H14.507Z" />
-    <path d="M17.672 0H24V6.328H17.672Z" />
-    <path d="M7.445 1.022H13.773V7.35H7.445Z" />
+        <path d="M0 7.8h6.3V24H0z"/>
+        <path d="M0 17.7h16.2V24H0z"/>
+        <path d="M0 12.75h11.25V24H0zM14.98 9.6h6.3v6.3h-6.3zM8.85 1.5h6.3v6.3h-6.3zM18.56 0H24v5.44h-5.44z"/>
     </svg>
 );
 
