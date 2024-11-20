@@ -21,7 +21,7 @@ export default function Hero() {
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-500">
             Effortlessly find and remove your personal information off the internet. 
-            We automatically monitor and strike down threats across the broadest coverage of data brokers available.
+            Automatically monitor and strike down threats across the broadest coverage of data brokers available.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button size="lg" className="px-8">
