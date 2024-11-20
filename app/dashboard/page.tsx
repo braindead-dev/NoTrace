@@ -1,3 +1,4 @@
+import { Metadata } from "next"
 import { AppSidebar } from "@/components/dashboard/app-sidebar"
 import {
   Breadcrumb,
@@ -11,6 +12,10 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
+
+export const metadata: Metadata = {
+  title: "Dashboard - NoTrace",
+}
 
 export default function Dashboard() {
   return (

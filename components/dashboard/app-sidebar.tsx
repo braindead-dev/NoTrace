@@ -41,35 +41,34 @@ const data = {
   navMain: [
     {
       title: "Dashboard",
-      url: "#",
+      url: "/dashboard",
       icon: LayoutDashboard,
-      isActive: true,
     },
     {
       title: "Reports",
-      url: "#",
+      url: "/dashboard/reports",
       icon: FileChartColumnIncreasing,
     },
     {
       title: "Manage Profile",
-      url: "#",
+      url: "/dashboard/profile",
       icon: UserCog,
     },
     {
       title: "Manage Family",
-      url: "#",
+      url: "/dashboard/family",
       icon: Users,
     },
   ],
   navSecondary: [
     {
       title: "Support",
-      url: "#",
+      url: "/dashboard/support",
       icon: LifeBuoy,
     },
     {
       title: "Feedback",
-      url: "#",
+      url: "/dashboard/feedback",
       icon: Send,
     },
   ],
