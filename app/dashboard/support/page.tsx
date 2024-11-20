@@ -16,6 +16,7 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { Search, MessageSquare, Phone, Mail } from "lucide-react"
+import FAQ from "@/components/FAQ";
 
 export default function Support() {
   return (
@@ -102,6 +103,11 @@ export default function Support() {
               <Button>Submit Ticket</Button>
             </CardContent>
           </Card>
+        </div>
+        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
+            <Card>
+                <FAQ/>
+            </Card>
         </div>
       </SidebarInset>
     </SidebarProvider>
