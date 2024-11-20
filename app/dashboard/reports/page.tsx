@@ -1,12 +1,8 @@
 "use client";
 
 import DashboardHeader from "@/components/dashboard/DashboardHeader";
-import { AppSidebar } from "@/components/dashboard/app-sidebar"
+import DashboardLayout from "@/components/dashboard/DashboardLayout";
 
-import {
-  SidebarInset,
-  SidebarProvider
-} from "@/components/ui/sidebar"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 
@@ -21,9 +17,7 @@ const data = [
 
 export default function Reports() {
   return (
-    <SidebarProvider className="bg-gray-50">
-      <AppSidebar />
-      <SidebarInset>
+    <DashboardLayout>
         <DashboardHeader title="Reports" />
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -74,7 +68,6 @@ export default function Reports() {
             </CardContent>
           </Card>
         </div>
-      </SidebarInset>
-    </SidebarProvider>
+    </DashboardLayout>
   )
 }

@@ -1,10 +1,6 @@
 import DashboardHeader from "@/components/dashboard/DashboardHeader";
-import { AppSidebar } from "@/components/dashboard/app-sidebar"
+import DashboardLayout from "@/components/dashboard/DashboardLayout";
 
-import {
-  SidebarInset,
-  SidebarProvider
-} from "@/components/ui/sidebar"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
@@ -13,9 +9,7 @@ import { Label } from "@/components/ui/label"
 
 export default function Feedback() {
   return (
-    <SidebarProvider className="bg-gray-50">
-      <AppSidebar />
-      <SidebarInset>
+    <DashboardLayout>
         <DashboardHeader title="Feedback" />
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           <Card>
@@ -81,7 +75,6 @@ export default function Feedback() {
             </CardContent>
           </Card>
         </div>
-      </SidebarInset>
-    </SidebarProvider>
+    </DashboardLayout>
   )
 }

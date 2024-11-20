@@ -1,10 +1,6 @@
 import DashboardHeader from "@/components/dashboard/DashboardHeader";
-import { AppSidebar } from "@/components/dashboard/app-sidebar"
+import DashboardLayout from "@/components/dashboard/DashboardLayout";
 
-import {
-  SidebarInset,
-  SidebarProvider
-} from "@/components/ui/sidebar"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -13,9 +9,7 @@ import { Switch } from "@/components/ui/switch"
 
 export default function Profile() {
   return (
-    <SidebarProvider className="bg-gray-50">
-      <AppSidebar />
-      <SidebarInset>
+    <DashboardLayout>
         <DashboardHeader title="Profile" />
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           <Card>
@@ -74,7 +68,6 @@ export default function Profile() {
             </CardContent>
           </Card>
         </div>
-      </SidebarInset>
-    </SidebarProvider>
+    </DashboardLayout>
   )
 }

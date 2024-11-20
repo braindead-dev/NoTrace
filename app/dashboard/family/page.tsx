@@ -1,10 +1,6 @@
 import DashboardHeader from "@/components/dashboard/DashboardHeader";
-import { AppSidebar } from "@/components/dashboard/app-sidebar"
+import DashboardLayout from "@/components/dashboard/DashboardLayout";
 
-import {
-  SidebarInset,
-  SidebarProvider
-} from "@/components/ui/sidebar"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -37,9 +33,7 @@ const familyMembers = [
 
 export default function Family() {
   return (
-    <SidebarProvider className="bg-gray-50">
-      <AppSidebar />
-      <SidebarInset>
+    <DashboardLayout>
         <DashboardHeader title="Family" />
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           <div className="flex justify-between items-center">
@@ -95,7 +89,6 @@ export default function Family() {
             </CardContent>
           </Card>
         </div>
-      </SidebarInset>
-    </SidebarProvider>
+    </DashboardLayout>
   )
 }

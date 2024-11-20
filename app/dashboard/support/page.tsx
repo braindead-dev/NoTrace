@@ -1,11 +1,7 @@
 import DashboardHeader from "@/components/dashboard/DashboardHeader";
+import DashboardLayout from "@/components/dashboard/DashboardLayout";
 import FAQ from "@/components/FAQ";
-import { AppSidebar } from "@/components/dashboard/app-sidebar"
 
-import {
-  SidebarInset,
-  SidebarProvider
-} from "@/components/ui/sidebar"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -14,9 +10,7 @@ import { Search, MessageSquare, Phone, Mail } from "lucide-react"
 
 export default function Support() {
   return (
-    <SidebarProvider className="bg-gray-50">
-      <AppSidebar />
-      <SidebarInset>
+    <DashboardLayout>
         <DashboardHeader title="Support" />
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           <div className="relative">
@@ -91,7 +85,6 @@ export default function Support() {
                 <FAQ/>
             </Card>
         </div>
-      </SidebarInset>
-    </SidebarProvider>
+    </DashboardLayout>
   )
 }
