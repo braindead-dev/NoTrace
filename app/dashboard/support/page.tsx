@@ -1,41 +1,23 @@
+import DashboardHeader from "@/components/dashboard/DashboardHeader";
+import FAQ from "@/components/FAQ";
 import { AppSidebar } from "@/components/dashboard/app-sidebar"
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbList,
-  BreadcrumbPage,
-} from "@/components/ui/breadcrumb"
-import { Separator } from "@/components/ui/separator"
+
 import {
   SidebarInset,
-  SidebarProvider,
-  SidebarTrigger,
+  SidebarProvider
 } from "@/components/ui/sidebar"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { Search, MessageSquare, Phone, Mail } from "lucide-react"
-import FAQ from "@/components/FAQ";
 
 export default function Support() {
   return (
     <SidebarProvider className="bg-gray-50">
       <AppSidebar />
       <SidebarInset>
-        <header className="flex h-16 shrink-0 items-center gap-2">
-          <div className="flex items-center gap-2 px-4">
-            <SidebarTrigger className="-ml-1" />
-            <Separator orientation="vertical" className="mr-2 h-4" />
-            <Breadcrumb>
-              <BreadcrumbList>
-                <BreadcrumbItem>
-                  <BreadcrumbPage>Support</BreadcrumbPage>
-                </BreadcrumbItem>
-              </BreadcrumbList>
-            </Breadcrumb>
-          </div>
-        </header>
+        <DashboardHeader title="Support" />
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           <div className="relative">
             <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
@@ -69,7 +51,7 @@ export default function Support() {
                 <p className="mb-4 text-sm text-muted-foreground">
                   Call us at +1 (555) 000-0000
                 </p>
-                <Button variant="outline" className="w-full">Call Now</Button>
+                <Button className="w-full">Call Now</Button>
               </CardContent>
             </Card>
 
@@ -84,7 +66,7 @@ export default function Support() {
                 <p className="mb-4 text-sm text-muted-foreground">
                   Email us at support@notrace.ai
                 </p>
-                <Button variant="outline" className="w-full">Send Email</Button>
+                <Button className="w-full">Send Email</Button>
               </CardContent>
             </Card>
           </div>
