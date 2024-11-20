@@ -9,7 +9,7 @@ import {
   Send,
   FileChartColumnIncreasing,
   LayoutDashboard,
-  Sparkles,
+  House,
 } from "lucide-react"
 
 import { NavMain } from "@/components/dashboard/nav-main"
@@ -99,7 +99,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 className="w-[--radix-dropdown-menu-trigger-width]"
                 align="start"
               >
-                <DropdownMenuItem asChild>
+                <DropdownMenuItem>
+                  <House className="h-4 w-4 mr-2" />
                   <a href="/">Homepage</a>
                 </DropdownMenuItem>
               </DropdownMenuContent>
