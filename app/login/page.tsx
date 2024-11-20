@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Shield } from "lucide-react";
+import Logo from "@/components/icons/Logo";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { UserAuthForm } from "@/app/login/components/user-auth-form";
@@ -24,7 +24,7 @@ export default function LoginPage() {
           href="/"
           className="relative z-20 flex items-center text-lg font-medium"
         >
-          <Shield className="mr-2 h-6 w-6" />
+          <Logo className="mr-2 h-6 w-6" />
           NoTrace
         </Link>
         <div className="relative z-20 mt-auto">

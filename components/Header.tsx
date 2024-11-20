@@ -1,16 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
+import Logo from "@/components/icons/Logo";
 
 const navigation = [
   { name: "Features", href: "/#features" },
   { name: "How It Works", href: "/#how-it-works" },
   { name: "Pricing", href: "/pricing" },
-  { name: "About Us", href: "/about" }
+  { name: "About Us", href: "/about" },
 ];
 
 export default function Header() {
@@ -35,7 +35,7 @@ export default function Header() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-14 items-center">
           <Link href="/" className="flex items-center space-x-2">
-            <Shield className="h-5 w-5 text-blue-600" />
+            <Logo className="text-blue-600" />
             <span className="font-bold text-lg">NoTrace</span>
           </Link>
 
@@ -67,9 +67,7 @@ export default function Header() {
               </Button>
             </Link>
             <Link href="/signup" passHref>
-              <Button size="sm">
-                Get Started
-              </Button>
+              <Button size="sm">Get Started</Button>
             </Link>
           </div>
         </div>

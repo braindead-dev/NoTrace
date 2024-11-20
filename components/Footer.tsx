@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Shield } from "lucide-react";
+import Logo from "@/components/icons/Logo";
 
 const footerLinks = {
   product: [
@@ -34,7 +34,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           <div className="col-span-2">
             <Link href="/" className="flex items-center space-x-2">
-              <Shield className="h-6 w-6 text-blue-600" />
+              <Logo className="h-6 w-6 text-blue-600" />
               <span className="font-bold text-xl">NoTrace</span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground max-w-xs">
