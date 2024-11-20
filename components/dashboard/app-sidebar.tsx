@@ -84,7 +84,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <SidebarMenuButton size="lg" asChild>
-                  <div>
+                  <div className="cursor-pointer">
                     <div className="flex aspect-square h-8 w-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
                       <Shield className="h-4 w-4" />
                     </div>
@@ -99,9 +99,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 className="w-[--radix-dropdown-menu-trigger-width]"
                 align="start"
               >
-                <DropdownMenuItem>
-                  <House className="h-4 w-4 mr-2" />
-                  <a href="/">Homepage</a>
+                <DropdownMenuItem asChild className="cursor-pointer">
+                  <a href="/">
+                    <House className="h-4 w-4 mr-2" />
+                    Homepage
+                  </a>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
