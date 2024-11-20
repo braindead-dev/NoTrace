@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { signIn } from "next-auth/react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -29,9 +30,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   async function onGoogleLogin() {
     setIsLoading(true);
     try {
-      // Google OAuth logic will go here
-      // TODO
-      console.log("Google login clicked");
+      await signIn("google", { callbackUrl: "/" });
     } catch (error) {
       console.error("Login failed:", error);
     } finally {
