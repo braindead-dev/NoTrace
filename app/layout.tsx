@@ -6,7 +6,7 @@ import LayoutWrapper from '@/components/LayoutWrapper';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'OptMeOut - Take Control of Your Digital Privacy',
+  title: 'NoTrace - Take Control of Your Digital Privacy',
   description: 'Automatically remove and monitor your personal information from data broker websites. Protect your privacy with our comprehensive removal service.',
 };
 

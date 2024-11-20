@@ -20,7 +20,7 @@ export default function CTA() {
             Ready to Protect Your Privacy?
           </h2>
           <p className="mx-auto max-w-[700px] text-blue-100 mt-4 text-lg">
-            Join thousands who trust OptMeOut to keep their information private and secure.
+            Join thousands who trust NoTrace to keep their information private and secure.
           </p>
           <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50">

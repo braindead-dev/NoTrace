@@ -98,7 +98,7 @@ export default function AboutPage() {
               Our Mission
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600 max-w-3xl mx-auto">
-              At OptMeOut, we believe privacy is a fundamental right. Our mission is to provide everyone with the tools to manage their digital footprint, enabling them to safeguard their personal information and reclaim control over their online identity.
+              At NoTrace, we believe privacy is a fundamental right. Our mission is to provide everyone with the tools to manage their digital footprint, enabling them to safeguard their personal information and reclaim control over their online identity.
             </p>
           </motion.div>
         </div>

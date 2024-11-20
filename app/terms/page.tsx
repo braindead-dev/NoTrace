@@ -12,17 +12,17 @@ export default function TermsOfService() {
           <section className="mb-8">
             <h2 className="sr-only">Welcome</h2>
             <p>
-              Welcome to OptMeOut! These Terms of Service (“Terms”) govern your use of our website 
-              (<a href="https://optmeout.com" className="text-blue-500 underline">optmeout.com</a>)
+              Welcome to NoTrace! These Terms of Service (“Terms”) govern your use of our website 
+              (<a href="https://notrace.ai" className="text-blue-500 underline">notrace.ai</a>)
               and services (“Services”). By accessing or using our Services, you agree to these 
               Terms. If you do not agree, please do not use our Services.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">1. About OptMeOut.com</h2>
+            <h2 className="text-2xl font-semibold mb-4">1. About NoTrace.ai</h2>
             <p>
-              OptMeOut.com helps you manage your digital footprint by identifying personal information held by
+              NoTrace.ai helps you manage your digital footprint by identifying personal information held by
               data brokers and submitting requests for its removal on your behalf. While we work hard to ensure
               your data is removed, we cannot guarantee that all requests will be honored by third parties.
             </p>
@@ -67,7 +67,7 @@ export default function TermsOfService() {
             <h2 className="text-2xl font-semibold mb-4">6. Service Limitations</h2>
             <ul className="list-disc pl-6 mt-2 space-y-2">
               <li>We make reasonable efforts to remove your data from data brokers but cannot guarantee full compliance.</li>
-              <li>OptMeOut.com does not provide legal advice or representation.</li>
+              <li>NoTrace.ai does not provide legal advice or representation.</li>
             </ul>
           </section>
 
@@ -98,7 +98,7 @@ export default function TermsOfService() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">10. Contact Us</h2>
             <p>For questions about these Terms, please contact us at:</p>
-            <p className="mt-2">Email: <a href="mailto:support@optmeout.com" className="text-blue-500 underline">support@optmeout.com</a></p>
+            <p className="mt-2">Email: <a href="mailto:support@notrace.ai" className="text-blue-500 underline">support@notrace.ai</a></p>
           </section>
         </div>
       </div>

@@ -10,7 +10,7 @@ export default function PrivacyPolicy() {
           <p className="text-sm text-muted-foreground mb-6">Last updated: 11/15/2024</p>
 
           <p>
-            At <strong>OptMeOut</strong>, we are committed to{' '}
+            At <strong>NoTrace</strong>, we are committed to{' '}
             <strong>keeping your privacy simple and clear</strong>. We collect the{' '}
             <strong>bare minimum</strong> of personal information necessary to provide our
             service—just enough to create your account, process payments, and deliver our services.
@@ -151,7 +151,7 @@ export default function PrivacyPolicy() {
             </ul>
             <p>
               If you would like to exercise any of your rights, please contact us at{' '}
-              <a href="mailto:support@optmeout.com" className="text-blue-500 underline">support@optmeout.com</a>
+              <a href="mailto:support@notrace.ai" className="text-blue-500 underline">support@notrace.ai</a>
               </p>
           </section>
 
@@ -194,7 +194,7 @@ export default function PrivacyPolicy() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">10. Contact Us</h2>
             <p>If you have any questions or concerns about this Privacy Policy, please contact us at:</p>
-            <p className="mt-2">Email: <a href="mailto:support@optmeout.com" className="text-blue-500 underline">support@optmeout.com</a></p>
+            <p className="mt-2">Email: <a href="mailto:support@notrace.ai" className="text-blue-500 underline">support@notrace.ai</a></p>
           </section>
         </div>
       </div>

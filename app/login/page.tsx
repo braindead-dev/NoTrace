@@ -25,12 +25,12 @@ export default function LoginPage() {
           className="relative z-20 flex items-center text-lg font-medium"
         >
           <Shield className="mr-2 h-6 w-6" />
-          OptMeOut
+          NoTrace
         </Link>
         <div className="relative z-20 mt-auto">
           <blockquote className="space-y-2">
             <p className="text-lg">
-              &ldquo;OptMeOut has given me complete control over my digital privacy. 
+              &ldquo;NoTrace has given me complete control over my digital privacy. 
               I finally feel secure knowing my personal information is protected.&rdquo;
             </p>
             <footer className="text-sm">Alex Chen, Privacy Advocate</footer>
