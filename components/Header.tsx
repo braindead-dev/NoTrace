@@ -35,7 +35,7 @@ export default function Header() {
         <div className="flex h-14 items-center">
           <Link href="/" className="flex items-center space-x-2">
             <Shield className="h-5 w-5 text-blue-600" />
-            <span className="font-bold text-lg">OptMeOut</span>
+            <span className="font-bold text-lg">NoTrace</span>
           </Link>
 
           <div className="hidden md:flex md:space-x-1 ml-10">

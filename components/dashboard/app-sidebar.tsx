@@ -89,7 +89,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                       <Shield className="h-4 w-4" />
                     </div>
                     <div className="grid flex-1 text-left text-sm leading-tight">
-                      <span className="truncate font-semibold">OptMeOut</span>
+                      <span className="truncate font-semibold">NoTrace</span>
                       <span className="truncate text-xs">Free Plan</span>
                     </div>
                   </div>
