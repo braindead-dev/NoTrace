@@ -20,11 +20,12 @@ export default function PricingPage() {
             className="text-center"
           >
             <h1 className="text-4xl font-bold tracking-tight sm:text-6xl text-gray-900">
-              Choose Your Privacy Protection Plan
+              Choose Your Protection Plan
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600 max-w-3xl mx-auto">
-              Protect your personal information with our comprehensive privacy protection plans. 
-              Choose the plan that best fits your needs.
+              <b>Sign up for Free Ongoing Monitoring.</b> Then decide if you need a Paid Plan.
+              <br/>
+              30-Day Money Back Guarantee. Cancel any time.
             </p>
           </motion.div>
         </div>

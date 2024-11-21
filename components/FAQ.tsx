@@ -8,8 +8,8 @@ const faqs = [
     answer: "Our system continuously scans major data broker websites for your personal information. When found, we automatically submit removal requests on your behalf using our proprietary technology. We track the removal process and verify that your information has been taken down."
   },
   {
-    question: "What's included in the family plan?",
-    answer: "The family plan covers up to 5 family members and includes all features from the Pro plan. Each family member gets their own privacy dashboard, customized removal requests, and individual dark web monitoring. You'll also get a comprehensive family privacy assessment and consolidated reporting."
+    question: "How can I get full protection for my family?",
+    answer: "Each paid plan allows you to add up to 5 family members at a highly discounted rate, compounding per member added. Each family member gets their own privacy dashboard, customized removal requests, and individual monitoring. You'll also get a comprehensive family privacy assessment and consolidated reporting."
   },
   {
     question: "How long does it take to remove my information?",

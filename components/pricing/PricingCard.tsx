@@ -32,17 +32,6 @@ export default function PricingCard({
       <div className="mb-6">
         <div className="flex justify-between items-center mb-4">
           <h3 className="text-2xl font-bold">{plan.name}</h3>
-          {variant && (
-            <span
-              className={`text-sm font-medium px-2 py-1 rounded ${
-                variant === "ultimate"
-                  ? "bg-purple-100 text-purple-600"
-                  : "bg-blue-100 text-blue-600"
-              }`}
-            >
-              {variant.charAt(0).toUpperCase() + variant.slice(1)}
-            </span>
-          )}
         </div>
 
         {/* Pricing */}
