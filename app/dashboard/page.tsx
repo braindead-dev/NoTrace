@@ -13,7 +13,7 @@ export default async function Dashboard() {
   const session = await getServerSession(authOptions);
   return (
     <DashboardLayout>
-      <DashboardHeader title={`Welcome, ${session?.user?.name || "User"} | Dashboard`}/> {/* fix later */}
+      <DashboardHeader title="Dashboard"/> 
       <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
         <div className="grid auto-rows-min gap-4 md:grid-cols-3">
           <div className="aspect-video rounded-xl bg-muted/50" />
