@@ -1,7 +1,7 @@
 // nav-user.tsx
 "use client";
 
-import { useSession } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 import {
   BadgeCheck,
   Bell,
@@ -85,6 +85,10 @@ export function NavUser() {
     },
   ];
 
+  const handleLogout = async () => {
+    await signOut({ callbackUrl: "/" });
+  };
+
   return (
     <SidebarMenu>
       <SidebarMenuItem>
@@ -152,8 +156,7 @@ export function NavUser() {
               ))}
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            {/* Log out item remains unchanged */}
-            <DropdownMenuItem>
+            <DropdownMenuItem onClick={handleLogout} className="cursor-pointer">
               <LogOut className="h-4 w-4 mr-2" />
               Log out
             </DropdownMenuItem>
