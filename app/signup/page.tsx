@@ -4,7 +4,7 @@ import Link from "next/link";
 import Logo from "@/components/icons/Logo";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import { UserAuthForm } from "@/app/login/components/user-auth-form";
+import { UserAuthForm } from "@/app/signup/components/user-auth-form";
 
 export default function SignupPage() {
   return (

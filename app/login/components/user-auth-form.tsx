@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { signIn } from "next-auth/react";
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -16,11 +17,11 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
     setIsLoading(true);
 
     try {
-      // Email sign in logic will go here
+      // Email sign-in logic will go here
       // TODO
-      console.log("Email sign in clicked");
+      console.log("Email sign-in clicked");
     } catch (error) {
-      console.error("Sign in failed:", error);
+      console.error("Sign-in failed:", error);
     } finally {
       setIsLoading(false);
     }
@@ -29,11 +30,9 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   async function onGoogleLogin() {
     setIsLoading(true);
     try {
-      // Google OAuth logic will go here
-      // TODO
-      console.log("Google login clicked");
+      await signIn("google", { callbackUrl: "/dashboard" });
     } catch (error) {
-      console.error("Login failed:", error);
+      console.error("Google login failed:", error);
     } finally {
       setIsLoading(false);
     }
@@ -88,9 +87,9 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
           </span>
         </div>
       </div>
-      <Button 
-        variant="outline" 
-        type="button" 
+      <Button
+        variant="outline"
+        type="button"
         disabled={isLoading}
         onClick={onGoogleLogin}
         className="bg-white hover:bg-gray-50"
