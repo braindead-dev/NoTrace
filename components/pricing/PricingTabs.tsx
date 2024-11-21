@@ -86,8 +86,8 @@ export default function PricingTabs() {
     <Tabs defaultValue="monthly" className="w-full">
       <div className="flex flex-col items-center space-y-4 mb-8">
         <TabsList className="grid w-full max-w-md grid-cols-2 bg-[#f2f2f2]">
-          <TabsTrigger value="monthly">Monthly Billing</TabsTrigger>
-          <TabsTrigger value="annual">Annual Billing</TabsTrigger>
+          <TabsTrigger value="monthly">Monthly</TabsTrigger>
+          <TabsTrigger value="annual">Yearly</TabsTrigger>
         </TabsList>
       </div>
 

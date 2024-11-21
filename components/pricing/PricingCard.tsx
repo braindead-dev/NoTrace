@@ -77,7 +77,7 @@ export default function PricingCard({
       <Button
         className={`w-full ${
           plan.price !== "0"
-            ? "bg-blue-700 hover:bg-blue-800"
+            ? "bg-blue-700 hover:bg-blue-600"
             : "bg-gray-500 hover:bg-gray-600"
         }`}
       >
