@@ -53,14 +53,37 @@ export function NavUser() {
       .filter((char) => /[A-Za-z]/.test(char))
       .join("")
       .toUpperCase();
-    if (initials.length >= 1) {
-      return initials.slice(0, 2);
-    } else {
-      return "";
-    }
+    return initials.slice(0, 2);
   }
 
   const initials = getInitials(user.name);
+
+  // Define menu items with their respective icons and URLs
+  const userMenuItemsGroup1 = [
+    {
+      title: "Upgrade to Pro",
+      url: "/dashboard/upgrade",
+      icon: Sparkles,
+    },
+  ];
+
+  const userMenuItemsGroup2 = [
+    {
+      title: "Account",
+      url: "/dashboard/account",
+      icon: BadgeCheck,
+    },
+    {
+      title: "Billing",
+      url: "/dashboard/billing",
+      icon: CreditCard,
+    },
+    {
+      title: "Notifications",
+      url: "/dashboard/notifications",
+      icon: Bell,
+    },
+  ];
 
   return (
     <SidebarMenu>
@@ -73,7 +96,9 @@ export function NavUser() {
             >
               <Avatar className="h-8 w-8 rounded-lg">
                 <AvatarImage src={user.image || undefined} alt={user.name} />
-                <AvatarFallback className="rounded-lg">{initials}</AvatarFallback>
+                <AvatarFallback className="rounded-lg">
+                  {initials}
+                </AvatarFallback>
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
                 <span className="truncate font-semibold">{user.name}</span>
@@ -92,7 +117,9 @@ export function NavUser() {
               <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
                 <Avatar className="h-8 w-8 rounded-lg">
                   <AvatarImage src={user.image || undefined} alt={user.name} />
-                  <AvatarFallback className="rounded-lg">{initials}</AvatarFallback>
+                  <AvatarFallback className="rounded-lg">
+                    {initials}
+                  </AvatarFallback>
                 </Avatar>
                 <div className="grid flex-1 text-left text-sm leading-tight">
                   <span className="truncate font-semibold">{user.name}</span>
@@ -101,28 +128,31 @@ export function NavUser() {
               </div>
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
+            {/* Render first group of menu items */}
             <DropdownMenuGroup>
-              <DropdownMenuItem>
-                <Sparkles className="h-4 w-4 mr-2" />
-                Upgrade to Pro
-              </DropdownMenuItem>
+              {userMenuItemsGroup1.map((item) => (
+                <DropdownMenuItem asChild key={item.title}>
+                  <a href={item.url}>
+                    <item.icon className="h-4 w-4 mr-2" />
+                    {item.title}
+                  </a>
+                </DropdownMenuItem>
+              ))}
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
+            {/* Render second group of menu items */}
             <DropdownMenuGroup>
-              <DropdownMenuItem>
-                <BadgeCheck className="h-4 w-4 mr-2" />
-                Account
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <CreditCard className="h-4 w-4 mr-2" />
-                Billing
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Bell className="h-4 w-4 mr-2" />
-                Notifications
-              </DropdownMenuItem>
+              {userMenuItemsGroup2.map((item) => (
+                <DropdownMenuItem asChild key={item.title}>
+                  <a href={item.url}>
+                    <item.icon className="h-4 w-4 mr-2" />
+                    {item.title}
+                  </a>
+                </DropdownMenuItem>
+              ))}
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
+            {/* Log out item remains unchanged */}
             <DropdownMenuItem>
               <LogOut className="h-4 w-4 mr-2" />
               Log out
