@@ -73,7 +73,9 @@ export default function PricingCard({
                 className={`h-5 w-5 mr-2 flex-shrink-0 mt-0.5 ${
                   plan.price === "0"
                     ? "text-gray-500"
-                    : "text-blue-600"
+                    : variant === "ultimate"
+                    ? "text-blue-600"
+                    : "text-blue-400"
                 }`}
               />
               <span>{feature}</span>

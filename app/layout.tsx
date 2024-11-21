@@ -7,7 +7,7 @@ import { Providers } from "./providers";
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'NoTrace - Take Control of Your Digital Privacy',
+  title: 'NoTrace - Take Control of Your Privacy',
   description: 'Automatically remove and monitor your personal information from data broker websites. Protect your privacy with our comprehensive removal service.',
 };
 
