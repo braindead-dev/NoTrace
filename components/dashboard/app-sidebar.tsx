@@ -1,6 +1,7 @@
-"use client"
+// app-sidebar.tsx
+"use client";
 
-import * as React from "react"
+import * as React from "react";
 import {
   Users,
   UserCog,
@@ -9,11 +10,11 @@ import {
   FileChartColumnIncreasing,
   LayoutDashboard,
   House,
-} from "lucide-react"
+} from "lucide-react";
 
-import { NavMain } from "@/components/dashboard/nav-main"
-import { NavSecondary } from "@/components/dashboard/nav-secondary"
-import { NavUser } from "@/components/dashboard/nav-user"
+import { NavMain } from "@/components/dashboard/nav-main";
+import { NavSecondary } from "@/components/dashboard/nav-secondary";
+import { NavUser } from "@/components/dashboard/nav-user";
 import {
   Sidebar,
   SidebarContent,
@@ -22,22 +23,17 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/sidebar";
 
 import {
   DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu";
 import Logo from "@/components/icons/Logo";
 
 const data = {
-  user: {
-    name: "henry",
-    email: "henry@example.com",
-    avatar: "",
-  },
   navMain: [
     {
       title: "Dashboard",
@@ -72,7 +68,7 @@ const data = {
       icon: Send,
     },
   ],
-}
+};
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -114,8 +110,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser />
       </SidebarFooter>
     </Sidebar>
-  )
+  );
 }
