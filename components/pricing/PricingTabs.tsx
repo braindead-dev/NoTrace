@@ -29,6 +29,7 @@ export const plans = {
         "Automatic opt-outs from newly added data brokers",
         "Detailed removal reports with screenshots (every ~90 days)",
         "Family discounts (up to 30%)",
+        "Email support",
       ],
     },
     annual: {
@@ -42,6 +43,7 @@ export const plans = {
         "Automatic opt-outs from newly added data brokers",
         "Detailed removal reports with screenshots (every ~90 days)",
         "Family discounts (up to 30%)",
+        "Email support",
       ],
     },
   },
