@@ -2,15 +2,12 @@
 import DashboardHeader from "@/components/dashboard/DashboardHeader";
 import DashboardLayout from "@/components/dashboard/DashboardLayout";
 import { Metadata } from "next";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/authOptions";
 
 export const metadata: Metadata = {
   title: "Dashboard - NoTrace",
 };
 
 export default async function Dashboard() {
-  const session = await getServerSession(authOptions);
   return (
     <DashboardLayout>
       <DashboardHeader title="Dashboard"/> 

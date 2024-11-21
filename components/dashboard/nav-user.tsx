@@ -37,7 +37,7 @@ export function NavUser() {
   const { data: session } = useSession();
 
   const user = {
-    name: session?.user?.name ?? "User",
+    name: session?.user?.name ?? "",
     email: session?.user?.email ?? "",
     image: session?.user?.image ?? "",
   };
@@ -45,7 +45,7 @@ export function NavUser() {
   // Function to generate initials
   function getInitials(name?: string | null): string {
     if (!name) {
-      return "U";
+      return "";
     }
     const initials = name
       .split(" ")
@@ -56,7 +56,7 @@ export function NavUser() {
     if (initials.length >= 1) {
       return initials.slice(0, 2);
     } else {
-      return "U";
+      return "";
     }
   }
 
