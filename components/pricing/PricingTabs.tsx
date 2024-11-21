@@ -6,7 +6,7 @@ import PricingCard from "@/components/pricing/PricingCard";
 
 export const plans = {
   free: {
-    name: "Free",
+    name: "Free Basic",
     price: "0",
     description: "Basic privacy monitoring for individuals",
     features: [
@@ -14,135 +14,153 @@ export const plans = {
       "Basic privacy report",
       "Email notifications",
       "Personal info exposure alerts",
-      "Privacy risk assessment"
-    ]
+      "Privacy risk assessment",
+    ],
   },
-  individual: {
+  pro: {
     monthly: {
-      name: "Pro",
-      price: "7.99",
-      description: "Complete privacy protection for individuals",
-      features: [
-        "Weekly data broker scans",
-        "Complete automated removal service",
-        "Real-time alerts",
-        "24/7 dedicated support",
-        "Custom removal requests",
-        "Complete privacy report",
-        "Dark web monitoring",
-        "Identity theft protection"
-      ]
-    },
-    annual: {
       name: "Pro",
       price: "4.99",
-      savings: "38%",
       description: "Complete privacy protection for individuals",
       features: [
         "Weekly data broker scans",
-        "Complete automated removal service",
+        "Automated removal service",
         "Real-time alerts",
-        "24/7 dedicated support",
+        "24/7 support",
         "Custom removal requests",
         "Complete privacy report",
         "Dark web monitoring",
-        "Identity theft protection"
-      ]
-    }
-  },
-  family: {
-    monthly: {
-      name: "Family",
-      price: "10.99",
-      description: "Protection for up to 5 family members",
-      features: [
-        "Everything in Pro plan",
-        "Up to 5 family members",
-        "Family dashboard",
-        "Family privacy assessment"
-      ]
+        "Identity theft protection",
+      ],
     },
     annual: {
-      name: "Family",
+      name: "Pro",
+      price: "3.99",
+      description: "Complete privacy protection for individuals",
+      features: [
+        "Weekly data broker scans",
+        "Automated removal service",
+        "Real-time alerts",
+        "24/7 support",
+        "Custom removal requests",
+        "Complete privacy report",
+        "Dark web monitoring",
+        "Identity theft protection",
+      ],
+    },
+  },
+  ultimate: {
+    monthly: {
+      name: "Ultimate",
       price: "7.99",
-      savings: "27%",
-      description: "Protection for up to 5 family members",
+      description: "Premium protection with additional features",
       features: [
         "Everything in Pro plan",
         "Up to 5 family members",
         "Family dashboard",
-        "Family privacy assessment"
-      ]
-    }
-  }
+        "Family privacy assessment",
+      ],
+    },
+    annual: {
+      name: "Ultimate",
+      price: "5.99",
+      description: "Premium protection with additional features",
+      features: [
+        "Everything in Pro plan",
+        "Up to 5 family members",
+        "Family dashboard",
+        "Family privacy assessment",
+      ],
+    },
+  },
 };
 
 export default function PricingTabs() {
   return (
     <Tabs defaultValue="monthly" className="w-full">
-        <div className="flex flex-col items-center space-y-4 mb-8">
+      <div className="flex flex-col items-center space-y-4 mb-8">
         <TabsList className="grid w-full max-w-md grid-cols-2 bg-[#f2f2f2]">
-            <TabsTrigger value="monthly">Monthly Billing</TabsTrigger>
-            <TabsTrigger value="annual">Annual Billing</TabsTrigger>
+          <TabsTrigger value="monthly">Monthly Billing</TabsTrigger>
+          <TabsTrigger value="annual">Annual Billing</TabsTrigger>
         </TabsList>
-        </div>
+      </div>
 
-        <TabsContent value="monthly" className="space-y-8">
+      {/* Monthly Plans */}
+      <TabsContent value="monthly" className="space-y-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <motion.div
+          {/* Free Plan */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            >                <PricingCard plan={plans.free} />
-            </motion.div>
-            <motion.div
+          >
+            <PricingCard plan={plans.free} />
+          </motion.div>
+
+          {/* Pro Plan */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            >                <PricingCard 
-                plan={plans.individual.monthly} 
-                variant="pro"
-            />
-            </motion.div>
-            <motion.div
+          >
+            <PricingCard plan={plans.pro.monthly} variant="pro" />
+          </motion.div>
+
+          {/* Ultimate Plan (Most Popular) */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            >                <PricingCard 
-                plan={plans.family.monthly} 
-                variant="family"
+          >
+            <PricingCard
+              plan={plans.ultimate.monthly}
+              variant="ultimate"
+              popular
             />
-            </motion.div>
+          </motion.div>
         </div>
-        </TabsContent>
+      </TabsContent>
 
-        <TabsContent value="annual" className="space-y-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
-            <motion.div
+      {/* Annual Plans */}
+      <TabsContent value="annual" className="space-y-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {/* Free Plan */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            >
-            <PricingCard 
-                plan={plans.individual.annual} 
-                variant="pro"
-                billing="annual"
-            />
-            </motion.div>
+          >
+            <PricingCard plan={plans.free} billing="annual" />
+          </motion.div>
 
-            <motion.div
+          {/* Pro Plan */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            >
-            <PricingCard 
-                plan={plans.family.annual} 
-                variant="family"
-                billing="annual"
+          >
+            <PricingCard
+              plan={plans.pro.annual}
+              variant="pro"
+              billing="annual"
             />
-            </motion.div>
+          </motion.div>
+
+          {/* Ultimate Plan (Most Popular) */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <PricingCard
+              plan={plans.ultimate.annual}
+              variant="ultimate"
+              popular
+              billing="annual"
+            />
+          </motion.div>
         </div>
-        </TabsContent>
+      </TabsContent>
     </Tabs>
   );
 }
