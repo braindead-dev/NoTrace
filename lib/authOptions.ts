@@ -1,3 +1,4 @@
+// lib/authOptions.ts
 import { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
@@ -7,6 +8,9 @@ import { v4 as uuidv4 } from "uuid";
 
 export const authOptions: NextAuthOptions = {
   adapter: MongoDBAdapter(clientPromise),
+  session: {
+    strategy: "jwt", // Use JWT sessions
+  },
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
@@ -14,11 +18,17 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   callbacks: {
-    async session({ session, user }) {
-      // Attach user ID and custom fields to the session object
-      if (session.user) {
-        session.user.id = user.id;
-        session.user.profileId = user.profileId;
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = user.id;
+        token.profileId = user.profileId;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      if (session.user && token) {
+        session.user.id = token.id as string;
+        session.user.profileId = token.profileId as string | undefined;
       }
       return session;
     },
@@ -44,6 +54,7 @@ export const authOptions: NextAuthOptions = {
         );
       } catch (error) {
         console.error("Error in createUser event:", error);
+        throw error;
       }
     },
   },
@@ -52,4 +63,5 @@ export const authOptions: NextAuthOptions = {
     error: "/login", // Redirect to the login page on error
   },
   secret: process.env.NEXTAUTH_SECRET,
+  debug: true, // Enable debug mode for detailed logs
 };
