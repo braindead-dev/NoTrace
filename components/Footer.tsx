@@ -3,10 +3,10 @@ import Logo from "@/components/icons/Logo";
 
 const footerLinks = {
   product: [
-    { name: "Features", href: "#features" },
+    { name: "Sites We Remove From", href: "#" },
     { name: "How It Works", href: "#how-it-works" },
+    { name: "Features", href: "#features" },
     { name: "Pricing", href: "/pricing" },
-    { name: "Security", href: "#" },
   ],
   company: [
     { name: "About Us", href: "/about" },
