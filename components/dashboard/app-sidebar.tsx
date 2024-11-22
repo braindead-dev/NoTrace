@@ -1,4 +1,3 @@
-// app-sidebar.tsx
 "use client";
 
 import * as React from "react";
@@ -11,7 +10,7 @@ import {
   LayoutDashboard,
   House,
 } from "lucide-react";
-import { useSession } from "next-auth/react";
+import { useCachedSession } from "@/hooks/use-cached-session";
 
 import { NavMain } from "@/components/dashboard/nav-main";
 import { NavSecondary } from "@/components/dashboard/nav-secondary";
@@ -72,7 +71,7 @@ const data = {
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-  const { data: session } = useSession();
+  const { session, isLoading } = useCachedSession();
   const planType = session?.user?.plan?.type || "free";
 
   // Mapping object for plan styles and display texts
@@ -98,6 +97,26 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   };
 
   const planStyle = planStyles[planType] || planStyles["free"];
+
+  if (isLoading) {
+    return (
+      <Sidebar variant="inset" {...props}>
+        <SidebarHeader>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <div className="animate-pulse flex items-center space-x-4 w-full p-2">
+                <div className="h-8 w-8 bg-gray-200 rounded-lg"></div>
+                <div className="flex-1 space-y-2">
+                  <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+                  <div className="h-3 bg-gray-200 rounded w-1/2"></div>
+                </div>
+              </div>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarHeader>
+      </Sidebar>
+    );
+  }
 
   return (
     <Sidebar variant="inset" {...props}>
