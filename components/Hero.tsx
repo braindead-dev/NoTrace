@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { Shield, Eraser, Eye } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -24,12 +25,16 @@ export default function Hero() {
             Automatically monitor and strike down threats across the broadest coverage of data brokers available.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
-            <Button size="lg" className="px-8">
-              Start Free Protection
-            </Button>
-            <Button variant="outline" size="lg">
-              How It Works
-            </Button>
+            <Link href="/signup" passHref> 
+              <Button size="lg" className="px-8">
+                Start Free Protection
+              </Button>
+            </Link>
+            <Link href="#how-it-works" passHref> 
+              <Button variant="outline" size="lg">
+                How It Works
+              </Button>
+            </Link>
           </div>
           
           <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-3">
