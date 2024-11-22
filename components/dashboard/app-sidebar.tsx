@@ -11,6 +11,7 @@ import {
   LayoutDashboard,
   House,
 } from "lucide-react";
+import { useSession } from "next-auth/react";
 
 import { NavMain } from "@/components/dashboard/nav-main";
 import { NavSecondary } from "@/components/dashboard/nav-secondary";
@@ -71,6 +72,19 @@ const data = {
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const { data: session } = useSession();
+
+  // Function to format the plan display text
+  const getPlanDisplayText = () => {
+    if (!session?.user?.plan) return "Free Plan";
+    
+    const { type } = session.user.plan;
+    if (type === "free") return "Free Plan";
+    
+    const planType = type.charAt(0).toUpperCase() + type.slice(1);
+    return `${planType} Plan`;
+  };
+
   return (
     <Sidebar variant="inset" {...props}>
       <SidebarHeader>
@@ -85,7 +99,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                     </div>
                     <div className="grid flex-1 text-left text-sm leading-tight">
                       <span className="truncate font-semibold">NoTrace</span>
-                      <span className="truncate text-xs">Free Plan</span>
+                      <span className="truncate text-xs">{getPlanDisplayText()}</span>
                     </div>
                   </div>
                 </SidebarMenuButton>

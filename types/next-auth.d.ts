@@ -1,5 +1,6 @@
 // next-auth.d.ts
 import NextAuth from "next-auth";
+import { UserPlan } from "@/lib/authOptions";
 
 declare module "next-auth" {
   interface Session {
@@ -8,12 +9,22 @@ declare module "next-auth" {
       name?: string | null;
       email?: string | null;
       image?: string | null;
-      profileId?: string; // Add custom field
+      profileId?: string;
+      plan?: UserPlan;
     };
   }
 
   interface User {
-    id: string; // Include the ID from the database
-    profileId?: string; // Add custom field
+    id: string;
+    profileId?: string;
+    plan?: UserPlan;
+  }
+}
+
+declare module "next-auth/jwt" {
+  interface JWT {
+    id: string;
+    profileId?: string;
+    plan?: UserPlan;
   }
 }

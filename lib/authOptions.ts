@@ -6,10 +6,17 @@ import clientPromise from "./mongodb";
 import { ObjectId } from "mongodb";
 import { v4 as uuidv4 } from "uuid";
 
+export type UserPlan = {
+  type: "free" | "pro" | "ultimate";
+  billing?: "monthly" | "annual"; // Only for pro and ultimate plans
+  startDate: Date;
+  endDate?: Date; // For subscription end date
+};
+
 export const authOptions: NextAuthOptions = {
   adapter: MongoDBAdapter(clientPromise),
   session: {
-    strategy: "jwt", // Use JWT sessions
+    strategy: "jwt",
   },
   providers: [
     GoogleProvider({
@@ -22,6 +29,14 @@ export const authOptions: NextAuthOptions = {
       if (user) {
         token.id = user.id;
         token.profileId = user.profileId;
+        
+        // Add plan information to the token
+        const client = await clientPromise;
+        const db = client.db();
+        const dbUser = await db.collection("users").findOne({ _id: new ObjectId(user.id) });
+        if (dbUser?.plan) {
+          token.plan = dbUser.plan;
+        }
       }
       return token;
     },
@@ -29,18 +44,24 @@ export const authOptions: NextAuthOptions = {
       if (session.user && token) {
         session.user.id = token.id as string;
         session.user.profileId = token.profileId as string | undefined;
+        session.user.plan = token.plan as UserPlan | undefined;
       }
       return session;
     },
   },
   events: {
     async createUser({ user }) {
-      // Add additional fields to the user document upon creation
       try {
         const client = await clientPromise;
         const db = client.db();
 
         const usersCollection = db.collection("users");
+
+        // Set up default free plan for new users
+        const defaultPlan: UserPlan = {
+          type: "free",
+          startDate: new Date(),
+        };
 
         await usersCollection.updateOne(
           { _id: new ObjectId(user.id) },
@@ -48,7 +69,7 @@ export const authOptions: NextAuthOptions = {
             $set: {
               profileId: uuidv4(),
               createdAt: new Date(),
-              // Add other custom fields as needed
+              plan: defaultPlan,
             },
           }
         );
@@ -60,8 +81,8 @@ export const authOptions: NextAuthOptions = {
   },
   pages: {
     signIn: "/login",
-    error: "/login", // Redirect to the login page on error
+    error: "/login",
   },
   secret: process.env.NEXTAUTH_SECRET,
-  debug: true, // Enable debug mode for detailed logs
+  debug: true,
 };
