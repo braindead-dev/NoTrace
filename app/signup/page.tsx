@@ -8,7 +8,7 @@ import { UserAuthForm } from "@/app/signup/components/user-auth-form";
 
 export default function SignupPage() {
   return (
-    <div className="container relative h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
+    <div className="container relative h-screen flex flex-col items-center pt-28 px-4 md:pt-0 md:px-0 md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
       <Link
         href="/login"
         className={cn(
@@ -38,7 +38,7 @@ export default function SignupPage() {
         </div>
       </div>
       <div className="lg:p-8">
-        <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
+        <div className="mx-auto flex w-full max-w-xs flex-col justify-center space-y-6 sm:w-[350px]">
           <div className="flex flex-col space-y-2 text-center">
             <h1 className="text-2xl font-semibold tracking-tight">
               Start for free
