@@ -1,12 +1,38 @@
 "use client";
 
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Logo from "@/components/icons/Logo";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { UserAuthForm } from "@/app/login/components/user-auth-form";
+import { useCachedSession } from "@/hooks/use-cached-session";
 
 export default function LoginPage() {
+  const router = useRouter();
+  const { session, status } = useCachedSession();
+
+  useEffect(() => {
+    if (status === "authenticated") {
+      router.push("/dashboard");
+    }
+  }, [status, router]);
+
+  // If we're loading or authenticated, don't show the login page content
+  if (status === "loading" || status === "authenticated") {
+    return (
+      <div className="container relative h-screen flex items-center justify-center">
+        <div className="w-full max-w-md space-y-6 text-center">
+          <div className="flex justify-center">
+            <Logo className="h-12 w-12 text-blue-600 animate-pulse" />
+          </div>
+          <p className="text-sm text-muted-foreground">Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="container relative h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
       <Link
