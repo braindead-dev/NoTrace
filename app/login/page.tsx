@@ -34,7 +34,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="container relative h-screen flex flex-col items-center pt-28 md:pt-0 md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
+    <div className="container relative h-screen flex flex-col items-center pt-28 px-4 md:pt-0 md:px-0 md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
       <Link
         href="/signup"
         className={cn(
@@ -64,7 +64,7 @@ export default function LoginPage() {
         </div>
       </div>
       <div className="lg:p-8">
-        <div className="mx-auto flex w-full max-w-sm flex-col justify-center space-y-6 sm:w-[350px]">
+        <div className="mx-auto flex w-full max-w-xs flex-col justify-center space-y-6 sm:w-[350px]">
           <div className="flex flex-col space-y-2 text-center">
             <h1 className="text-2xl font-semibold tracking-tight">
               Welcome back
