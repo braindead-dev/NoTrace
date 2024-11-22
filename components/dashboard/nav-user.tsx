@@ -1,8 +1,7 @@
+// nav-user.tsx
 "use client";
 
-import { useState } from "react";
-import { signOut } from "next-auth/react";
-import Image from "next/image";
+import { useSession, signOut } from "next-auth/react";
 import {
   BadgeCheck,
   Bell,
@@ -15,6 +14,7 @@ import {
 import {
   Avatar,
   AvatarFallback,
+  AvatarImage,
 } from "@/components/ui/avatar";
 import {
   DropdownMenu,
@@ -31,11 +31,10 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
-import { useCachedSession } from "@/hooks/use-cached-session";
 
 export function NavUser() {
   const { isMobile } = useSidebar();
-  const { session, isLoading } = useCachedSession();
+  const { data: session } = useSession();
 
   const user = {
     name: session?.user?.name ?? "",
@@ -87,27 +86,8 @@ export function NavUser() {
   ];
 
   const handleLogout = async () => {
-    localStorage.removeItem("user_session_cache"); // Clear cache before logout
     await signOut({ callbackUrl: "/" });
   };
-
-  if (isLoading) {
-    return (
-      <SidebarMenu>
-        <SidebarMenuItem>
-          <SidebarMenuButton size="lg">
-            <div className="animate-pulse flex items-center space-x-4 w-full">
-              <div className="h-8 w-8 bg-gray-200 rounded-lg"></div>
-              <div className="flex-1 space-y-2">
-                <div className="h-4 bg-gray-200 rounded w-3/4"></div>
-                <div className="h-3 bg-gray-200 rounded w-1/2"></div>
-              </div>
-            </div>
-          </SidebarMenuButton>
-        </SidebarMenuItem>
-      </SidebarMenu>
-    );
-  }
 
   return (
     <SidebarMenu>
@@ -118,21 +98,11 @@ export function NavUser() {
               size="lg"
               className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
             >
-              <Avatar className="h-8 w-8 rounded-lg overflow-hidden">
-                {user.image ? (
-                  <Image
-                    src={user.image}
-                    alt={user.name}
-                    width={32}
-                    height={32}
-                    quality={100}
-                    className="object-cover w-full h-full"
-                  />
-                ) : (
-                  <AvatarFallback className="rounded-lg">
-                    {initials}
-                  </AvatarFallback>
-                )}
+              <Avatar className="h-8 w-8 rounded-lg">
+                <AvatarImage src={user.image || undefined} alt={user.name} />
+                <AvatarFallback className="rounded-lg">
+                  {initials}
+                </AvatarFallback>
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
                 <span className="truncate font-semibold">{user.name}</span>
@@ -149,21 +119,11 @@ export function NavUser() {
           >
             <DropdownMenuLabel className="p-0 font-normal">
               <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
-                <Avatar className="h-8 w-8 rounded-lg overflow-hidden">
-                  {user.image ? (
-                    <Image
-                      src={user.image}
-                      alt={user.name}
-                      width={32}
-                      height={32}
-                      quality={100}
-                      className="object-cover w-full h-full"
-                    />
-                  ) : (
-                    <AvatarFallback className="rounded-lg">
-                      {initials}
-                    </AvatarFallback>
-                  )}
+                <Avatar className="h-8 w-8 rounded-lg">
+                  <AvatarImage src={user.image || undefined} alt={user.name} />
+                  <AvatarFallback className="rounded-lg">
+                    {initials}
+                  </AvatarFallback>
                 </Avatar>
                 <div className="grid flex-1 text-left text-sm leading-tight">
                   <span className="truncate font-semibold">{user.name}</span>

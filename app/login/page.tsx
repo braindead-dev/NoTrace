@@ -11,7 +11,7 @@ import { useCachedSession } from "@/hooks/use-cached-session";
 
 export default function LoginPage() {
   const router = useRouter();
-  const { session, status } = useCachedSession();
+  const { status } = useCachedSession();
 
   useEffect(() => {
     if (status === "authenticated") {

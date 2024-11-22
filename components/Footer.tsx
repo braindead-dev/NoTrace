@@ -83,7 +83,7 @@ export default function Footer() {
               <Link href="#" className="text-muted-foreground hover:text-foreground">
                 LinkedIn
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground">
+              <Link href="https://github.com/NoTrace-ai" className="text-muted-foreground hover:text-foreground" target="_blank">
                 GitHub
               </Link>
             </div>
