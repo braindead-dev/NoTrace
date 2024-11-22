@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Shield } from "lucide-react";
@@ -23,9 +24,11 @@ export default function CTA() {
             Join thousands who trust NoTrace to keep their information private and secure.
           </p>
           <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50">
-              Start Your Protection
-            </Button>
+            <Link href="/signup" passHref> 
+              <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50">
+                Start Your Protection
+              </Button>
+            </Link> 
           </div>
           <p className="mt-5 text-sm text-blue-200">
             30-day money-back guarantee • Cancel anytime
