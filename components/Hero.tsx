@@ -31,10 +31,11 @@ export default function Hero() {
               </Button>
             </Link>
             <Link href="#how-it-works" passHref> 
-              <Button variant="outline" size="lg">
+              <Button variant="outline" size="lg" className="hidden md:inline-flex">
                 How It Works
               </Button>
             </Link>
+
           </div>
           
           <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-3">
