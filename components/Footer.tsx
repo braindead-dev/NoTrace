@@ -5,8 +5,8 @@ import { FaXTwitter, FaGithub } from "react-icons/fa6";
 const footerLinks = {
   product: [
     { name: "Sites We Remove From", href: "#" },
-    { name: "How It Works", href: "#how-it-works" },
-    { name: "Features", href: "#features" },
+    { name: "How It Works", href: "https://notrace.ai/#how-it-works" },
+    { name: "Features", href: "https://notrace.ai/#features" },
     { name: "Pricing", href: "/pricing" },
   ],
   company: [
