@@ -2,7 +2,7 @@
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
-const faqs = [
+export const faqs = [
   {
     question: "How does the automated data broker removal work?",
     answer: "Our system continuously scans major data broker websites for your personal information. When found, we automatically submit removal requests on your behalf using our proprietary technology. We track the removal process and verify that your information has been taken down."

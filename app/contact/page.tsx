@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -20,33 +21,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-
-const faqs = [
-  {
-    question: "How does the automated data broker removal work?",
-    answer: "Our system continuously scans major data broker websites for your personal information. When found, we automatically submit removal requests on your behalf using our proprietary technology. We track the removal process and verify that your information has been taken down."
-  },
-  {
-    question: "How can I get full protection for my family?",
-    answer: "Each paid plan allows you to add up to 5 family members at a highly discounted rate, compounding per member added. Each family member gets their own privacy dashboard, customized removal requests, and individual monitoring. You'll also get a comprehensive family privacy assessment and consolidated reporting."
-  },
-  {
-    question: "How long does it take to remove my information?",
-    answer: "Initial removal requests are typically processed within 24-48 hours. However, complete removal from data broker sites can take 30-45 days, as each broker has different removal processes and timeframes. We continuously monitor and verify removals throughout this period."
-  },
-  {
-    question: "Can I cancel my subscription at any time?",
-    answer: "Yes, you can cancel your subscription at any time. For monthly plans, you'll maintain access until the end of your current billing period. For annual plans, you can continue using the service until your subscription year ends."
-  },
-  {
-    question: "What happens after I sign up?",
-    answer: "After signing up, you'll complete a brief onboarding process to verify your identity and provide the information we need to protect. We'll immediately begin scanning for your data across broker sites and the dark web. You'll receive your first privacy report within 24 hours."
-  },
-  {
-    question: "Is my personal information secure with your service?",
-    answer: "Absolutely. We use bank-level encryption and security measures to protect your data. We never share your information with third parties, and our systems are regularly audited for security compliance. Your privacy and security are our top priority."
-  }
-];
+import { faqs } from "@/components/FAQ";
 
 const botpoison = new Botpoison({
   publicKey: process.env.NEXT_PUBLIC_BOTPOISON_PUBLIC_KEY!,
@@ -112,90 +87,119 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="flex items-start justify-center h-screen">
-      <div className="container flex flex-col max-w-6xl md:flex-row py-24 gap-6">
 
-        {/* Contact Form Section */}
-        <div className="w-full md:w-3/5">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-2xl text-center">Contact Us</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <Form {...form}>
-                <form
-                  onSubmit={form.handleSubmit(onSubmit)}
-                  className="space-y-6"
-                >
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Email</FormLabel>
-                        <FormControl>
-                          <Input placeholder="edward@snowden.com" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="subject"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Subject</FormLabel>
-                        <FormControl>
-                          <Input placeholder="How can we help?" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Message</FormLabel>
-                        <FormControl>
-                          <Textarea
-                            placeholder="Tell us what's on your mind..."
-                            className="min-h-[150px]"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <Button type="submit" disabled={isSubmitting}>
-                    {isSubmitting ? "Sending..." : "Send Message"}
-                  </Button>
-                </form>
-              </Form>
-            </CardContent>
-          </Card>
-        </div>
+    <div className="min-h-screen pt-16 bg-background">
 
-        {/* FAQ Section */}
-        <div className="w-full md:w-2/5">
+        {/* Hero Section */}
+        <section className="relative pt-20 bg-gradient-to-b from-blue-50 to-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-center"
+            >
+              <h1 className="text-4xl font-bold tracking-tight sm:text-6xl text-gray-900">
+                Help Center
+              </h1>
+              <p className="mt-6 text-lg leading-8 text-gray-600 max-w-3xl mx-auto">
+                Find answers, guides, and support to resolve your questions quickly.
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
+        <div className="flex flex-col items-center justify-start min-h-screen">
+        {/* Main Content Section */}
+        <div className="container flex flex-col max-w-6xl md:flex-row pt-12 pb-24 gap-6">
+            {/* Contact Form Section */}
+            <div className="w-full md:w-3/5">
+            <Card>
+                <CardHeader>
+                <CardTitle className="text-2xl text-center">Contact Us</CardTitle>
+                </CardHeader>
+                <CardContent>
+                <Form {...form}>
+                    <form
+                    onSubmit={form.handleSubmit(onSubmit)}
+                    className="space-y-6"
+                    >
+                    <FormField
+                        control={form.control}
+                        name="email"
+                        render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>Email</FormLabel>
+                            <FormControl>
+                            <Input placeholder="edward@snowden.com" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                        )}
+                    />
+                    <FormField
+                        control={form.control}
+                        name="subject"
+                        render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>Subject</FormLabel>
+                            <FormControl>
+                            <Input placeholder="How can we help?" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                        )}
+                    />
+                    <FormField
+                        control={form.control}
+                        name="message"
+                        render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>Message</FormLabel>
+                            <FormControl>
+                            <Textarea
+                                placeholder="Tell us what's on your mind..."
+                                className="min-h-[150px]"
+                                {...field}
+                            />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                        )}
+                    />
+                    <Button type="submit" disabled={isSubmitting}>
+                        {isSubmitting ? "Sending..." : "Send Message"}
+                    </Button>
+                    </form>
+                </Form>
+                </CardContent>
+            </Card>
+            </div>
+
+            {/* FAQ Section */}
+            <div className="w-full md:w-2/5">
             <Card>
                 <CardHeader>
                 <CardTitle className="text-2xl text-center">FAQ</CardTitle>
                 </CardHeader>
-                    <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-                    {faqs.map((faq, index) => (
-                        <AccordionItem key={index} value={`item-${index}`}>
-                        <AccordionTrigger className="no-underline hover:no-underline">{faq.question}</AccordionTrigger>
-                        <AccordionContent>{faq.answer}</AccordionContent>
-                        </AccordionItem>
-                    ))}
-                    </Accordion>
+                <Accordion
+                type="single"
+                collapsible
+                className="w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-8"
+                >
+                {faqs.map((faq, index) => (
+                    <AccordionItem key={index} value={`item-${index}`}>
+                    <AccordionTrigger className="no-underline hover:no-underline">
+                        {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent>{faq.answer}</AccordionContent>
+                    </AccordionItem>
+                ))}
+                </Accordion>
             </Card>
+            </div>
         </div>
-      </div>
+        </div>
     </div>
   );
 }
