@@ -1,37 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Shield, Lock, Search, RefreshCw, Linkedin, Mail } from "lucide-react";
+import { Shield, Lock, Search, RefreshCw, Mail } from "lucide-react";
+import { FaLinkedin } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import FAQ from "@/components/FAQ";
-
-// const teamMembers = [
-//   {
-//     name: "Henry Wang",
-//     role: "CEO & Founder",
-//     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
-//     linkedin: "https://www.linkedin.com/in/henry00c/"
-//   },
-//   {
-//     name: "Michael Rodriguez",
-//     role: "CTO",
-//     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Michael",
-//     linkedin: "#"
-//   },
-//   {
-//     name: "Emma Thompson",
-//     role: "Head of Privacy",
-//     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Emma",
-//     linkedin: "#"
-//   },
-//   {
-//     name: "David Kim",
-//     role: "Lead Engineer",
-//     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=David",
-//     linkedin: "#"
-//   }
-// ];
+import Image from 'next/image';
 
 const values = [
   {
@@ -67,40 +42,17 @@ export default function AboutPage() {
               We're All About Privacy
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600 max-w-3xl mx-auto">
-              Empowering individuals and organizations to manage their online presence and protect their personal information.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Mission Section */}
-      <section id="mission" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center"
-          >
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-900">
-              Our Mission
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600 max-w-3xl mx-auto">
               At NoTrace, we believe privacy is a fundamental right. Our mission is to provide everyone with the tools to manage their digital footprint, enabling them to safeguard their personal information and reclaim control over their online identity.
             </p>
           </motion.div>
         </div>
       </section>
+
+ 
       
       {/* What We Do Section */}
-      <section className="py-24 bg-gray-50">
+      <section className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-900">
-              What We Do
-            </h2>
-          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
@@ -141,50 +93,48 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
-{/* {      <section className="py-24 bg-white">
+      {/* Founder Section */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-900">
               Meet the Founder
             </h2>
-            <p className="mt-4 text-lg text-gray-600">
-              A dedicated group of privacy enthusiasts and tech experts
-            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card className="text-center overflow-hidden">
-                  <CardContent className="pt-6">
-                    <div className="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4">
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <h3 className="font-semibold text-lg">{member.name}</h3>
-                    <p className="text-gray-600 mb-4">{member.role}</p>
-                    <Button variant="ghost" size="sm" asChild>
-                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
-                        <Linkedin className="h-4 w-4 mr-2" />
-                        View Profile
-                      </a>
-                    </Button>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+          <div className="flex justify-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <Card className="text-center overflow-hidden">
+                <CardContent className="pt-6">
+                  <div className="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4">
+                    <Image
+                      src="/images/founder.jpeg"
+                      width={24}
+                      height={24}
+                      unoptimized={true}
+                      alt="Henry Wang"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="font-semibold text-lg">Henry Wang</h3>
+                  <p className="text-gray-600 mb-4">CEO & Founder</p>
+                  <Button variant="ghost" size="sm" asChild>
+                    <a href="https://www.linkedin.com/in/henry00c/" target="_blank" rel="noopener noreferrer">
+                      <FaLinkedin className="h-5 w-5 mr-2" />
+                      View Profile
+                    </a>
+                  </Button>
+                </CardContent>
+              </Card>
+            </motion.div>
           </div>
         </div>
-      </section>} */}
+      </section>
+
 
       {/* Values Section */}
       <section className="py-24 bg-gray-50">
@@ -219,7 +169,9 @@ export default function AboutPage() {
       </section>
 
       {/* FAQ Section */}
-      <FAQ />
+      <div className="pt-10">
+        <FAQ />
+      </div>
 
       {/* CTA Section */}
       <section className="py-24 bg-blue-600">
