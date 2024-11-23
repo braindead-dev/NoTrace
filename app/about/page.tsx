@@ -6,32 +6,32 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import FAQ from "@/components/FAQ";
 
-const teamMembers = [
-  {
-    name: "Henry Wang",
-    role: "CEO & Founder",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
-    linkedin: "https://www.linkedin.com/in/henry00c/"
-  },
-  {
-    name: "Michael Rodriguez",
-    role: "CTO",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Michael",
-    linkedin: "#"
-  },
-  {
-    name: "Emma Thompson",
-    role: "Head of Privacy",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Emma",
-    linkedin: "#"
-  },
-  {
-    name: "David Kim",
-    role: "Lead Engineer",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=David",
-    linkedin: "#"
-  }
-];
+// const teamMembers = [
+//   {
+//     name: "Henry Wang",
+//     role: "CEO & Founder",
+//     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
+//     linkedin: "https://www.linkedin.com/in/henry00c/"
+//   },
+//   {
+//     name: "Michael Rodriguez",
+//     role: "CTO",
+//     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Michael",
+//     linkedin: "#"
+//   },
+//   {
+//     name: "Emma Thompson",
+//     role: "Head of Privacy",
+//     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Emma",
+//     linkedin: "#"
+//   },
+//   {
+//     name: "David Kim",
+//     role: "Lead Engineer",
+//     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=David",
+//     linkedin: "#"
+//   }
+// ];
 
 const values = [
   {
@@ -64,16 +64,11 @@ export default function AboutPage() {
             className="text-center"
           >
             <h1 className="text-4xl font-bold tracking-tight sm:text-6xl text-gray-900">
-              Take Control of Your Digital Privacy
+              We're All About Privacy
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600 max-w-3xl mx-auto">
               Empowering individuals and organizations to manage their online presence and protect their personal information.
             </p>
-            <div className="mt-10">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-                Learn More About Our Mission
-              </Button>
-            </div>
           </motion.div>
         </div>
       </section>
@@ -97,7 +92,7 @@ export default function AboutPage() {
           </motion.div>
         </div>
       </section>
-
+      
       {/* What We Do Section */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -147,11 +142,11 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-24 bg-white">
+{/* {      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-900">
-              Meet the Team
+              Meet the Founder
             </h2>
             <p className="mt-4 text-lg text-gray-600">
               A dedicated group of privacy enthusiasts and tech experts
@@ -189,7 +184,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section>} */}
 
       {/* Values Section */}
       <section className="py-24 bg-gray-50">

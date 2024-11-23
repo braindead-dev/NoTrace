@@ -77,11 +77,11 @@ export default function Footer() {
             <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} NoTrace. All rights reserved.
             </p>
-            <div className="flex space-x-4 mt-4 md:mt-0 text-gray-500 hover:text-gray-600">
-              <Link href="https://x.com/NoTrace_ai" target="_blank" aria-label="X (Twitter)">
+            <div className="flex space-x-4 mt-4 md:mt-0 text-gray-500">
+              <Link href="https://x.com/NoTrace_ai" className="hover:text-gray-600" target="_blank" aria-label="X (Twitter)">
                 <FaXTwitter className="h-6 w-6" />
               </Link>
-              <Link href="https://github.com/NoTrace-ai" target="_blank" aria-label="GitHub">
+              <Link href="https://github.com/NoTrace-ai" className="hover:text-gray-600" target="_blank" aria-label="GitHub">
                 <FaGithub className="h-6 w-6" />
               </Link>
             </div>
