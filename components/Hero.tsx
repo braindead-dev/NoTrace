@@ -21,8 +21,8 @@ export default function Hero() {
             <span className="text-blue-600 block mt-2">Reclaim Your Privacy</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-500">
-            Effortlessly find and remove your personal information off the internet. 
-            Automatically monitor and strike down threats across the broadest coverage of data brokers available.
+            Effortlessly find and remove your personal information from the internet.
+            Monitor your digital footprint across the broadest data broker coverage.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Link href="/signup" passHref> 
@@ -35,7 +35,6 @@ export default function Hero() {
                 How It Works
               </Button>
             </Link>
-
           </div>
           
           <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-3">
