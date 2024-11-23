@@ -16,9 +16,9 @@ export default function Hero() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-6xl">
+          <h1 className="text-3xl font-bold tracking-tight text-primary sm:text-5xl lg:text-6xl">
             Clean Your Digital Footprint
-            <span className="text-blue-600 block mt-2">Reclaim Your Privacy</span>
+            <span className="text-blue-600 block sm:mt-1 lg:mt-2">Reclaim Your Privacy</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-500">
             Effortlessly find and remove your personal information from the internet.
