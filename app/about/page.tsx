@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import FAQ from "@/components/FAQ";
 import Image from 'next/image';
+import Link from "next/link";
 
 const values = [
   {
@@ -115,7 +116,6 @@ export default function AboutPage() {
                       src="/images/founder.jpeg"
                       width={24}
                       height={24}
-                      unoptimized={true}
                       alt="Henry Wang"
                       className="w-full h-full object-cover"
                     />
@@ -187,9 +187,12 @@ export default function AboutPage() {
               <Button size="lg" variant="secondary">
                 View Open Roles
               </Button>
-              <Button size="lg" variant="outline" className="bg-transparent text-white hover:bg-blue-700 hover:text-white">
-                <Mail className="mr-2 h-4 w-4" /> Contact Us
-              </Button>
+
+              <Link href="/help">
+                <Button size="lg" variant="outline" className="bg-transparent text-white hover:bg-blue-700 hover:text-white">
+                  <Mail className="mr-2 h-4 w-4" /> Contact Us
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
