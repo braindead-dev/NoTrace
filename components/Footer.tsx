@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Logo from "@/components/icons/Logo";
+import { FaXTwitter, FaGithub } from "react-icons/fa6";
 
 const footerLinks = {
   product: [
@@ -71,20 +72,17 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t">
+        <div className="mt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} NoTrace. All rights reserved.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="#" className="text-muted-foreground hover:text-foreground">
-                Twitter
+            <div className="flex space-x-4 mt-4 md:mt-0 text-gray-500 hover:text-gray-600">
+              <Link href="https://x.com/NoTrace_ai" target="_blank" aria-label="X (Twitter)">
+                <FaXTwitter className="h-6 w-6" />
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground">
-                LinkedIn
-              </Link>
-              <Link href="https://github.com/NoTrace-ai" className="text-muted-foreground hover:text-foreground" target="_blank">
-                GitHub
+              <Link href="https://github.com/NoTrace-ai" target="_blank" aria-label="GitHub">
+                <FaGithub className="h-6 w-6" />
               </Link>
             </div>
           </div>
