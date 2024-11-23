@@ -109,97 +109,103 @@ export default function HelpCenterPage() {
           </div>
         </section>
 
-        <div className="flex flex-col items-center justify-start min-h-screen">
-        {/* Main Content Section */}
-        <div className="container flex flex-col max-w-6xl md:flex-row pt-12 pb-24 gap-6">
-            {/* Contact Form Section */}
-            <div className="w-full md:w-3/5">
-            <Card>
-                <CardHeader>
-                <CardTitle className="text-2xl text-center">Contact Us</CardTitle>
-                </CardHeader>
-                <CardContent>
-                <Form {...form}>
-                    <form
-                    onSubmit={form.handleSubmit(onSubmit)}
-                    className="space-y-6"
-                    >
-                    <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Email</FormLabel>
-                            <FormControl>
-                            <Input placeholder="edward@snowden.com" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                        )}
-                    />
-                    <FormField
-                        control={form.control}
-                        name="subject"
-                        render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Subject</FormLabel>
-                            <FormControl>
-                            <Input placeholder="How can we help?" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                        )}
-                    />
-                    <FormField
-                        control={form.control}
-                        name="message"
-                        render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Message</FormLabel>
-                            <FormControl>
-                            <Textarea
-                                placeholder="Tell us what's on your mind..."
-                                className="min-h-[150px]"
-                                {...field}
-                            />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                        )}
-                    />
-                    <Button type="submit" disabled={isSubmitting}>
-                        {isSubmitting ? "Sending..." : "Send Message"}
-                    </Button>
-                    </form>
-                </Form>
-                </CardContent>
-            </Card>
-            </div>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1}}
+        >
+          <div className="flex flex-col items-center justify-start min-h-screen">
+            {/* Main Content Section */}
+            <div className="container flex flex-col max-w-6xl md:flex-row pt-12 pb-24 gap-6">
+                {/* Contact Form Section */}
+                <div className="w-full md:w-3/5">
+                <Card>
+                    <CardHeader>
+                      <CardTitle className="text-2xl text-center">Contact Us</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <Form {...form}>
+                          <form
+                          onSubmit={form.handleSubmit(onSubmit)}
+                          className="space-y-6"
+                          >
+                          <FormField
+                              control={form.control}
+                              name="email"
+                              render={({ field }) => (
+                              <FormItem>
+                                  <FormLabel>Email</FormLabel>
+                                  <FormControl>
+                                  <Input placeholder="edward@snowden.com" {...field} />
+                                  </FormControl>
+                                  <FormMessage />
+                              </FormItem>
+                              )}
+                          />
+                          <FormField
+                              control={form.control}
+                              name="subject"
+                              render={({ field }) => (
+                              <FormItem>
+                                  <FormLabel>Subject</FormLabel>
+                                  <FormControl>
+                                  <Input placeholder="How can we help?" {...field} />
+                                  </FormControl>
+                                  <FormMessage />
+                              </FormItem>
+                              )}
+                          />
+                          <FormField
+                              control={form.control}
+                              name="message"
+                              render={({ field }) => (
+                              <FormItem>
+                                  <FormLabel>Message</FormLabel>
+                                  <FormControl>
+                                  <Textarea
+                                      placeholder="Tell us what's on your mind..."
+                                      className="min-h-[150px]"
+                                      {...field}
+                                  />
+                                  </FormControl>
+                                  <FormMessage />
+                              </FormItem>
+                              )}
+                          />
+                          <Button type="submit" disabled={isSubmitting}>
+                              {isSubmitting ? "Sending..." : "Send Message"}
+                          </Button>
+                          </form>
+                      </Form>
+                    </CardContent>
+                </Card>
+                </div>
 
-            {/* FAQ Section */}
-            <div className="w-full md:w-2/5">
-            <Card>
-                <CardHeader>
-                <CardTitle className="text-2xl text-center">FAQ</CardTitle>
-                </CardHeader>
-                <Accordion
-                type="single"
-                collapsible
-                className="w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-8"
-                >
-                {faqs.map((faq, index) => (
-                    <AccordionItem key={index} value={`item-${index}`}>
-                    <AccordionTrigger className="no-underline hover:no-underline">
-                        {faq.question}
-                    </AccordionTrigger>
-                    <AccordionContent>{faq.answer}</AccordionContent>
-                    </AccordionItem>
-                ))}
-                </Accordion>
-            </Card>
+                {/* FAQ Section */}
+                <div className="w-full md:w-2/5">
+                <Card>
+                    <CardHeader>
+                      <CardTitle className="text-2xl text-center">FAQ</CardTitle>
+                    </CardHeader>
+                    <Accordion
+                      type="single"
+                      collapsible
+                      className="w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-8"
+                    >
+                    {faqs.map((faq, index) => (
+                        <AccordionItem key={index} value={`item-${index}`}>
+                        <AccordionTrigger className="no-underline hover:no-underline">
+                            {faq.question}
+                        </AccordionTrigger>
+                        <AccordionContent>{faq.answer}</AccordionContent>
+                        </AccordionItem>
+                    ))}
+                    </Accordion>
+                </Card>
+                </div>
             </div>
-        </div>
-        </div>
+          </div>
+        </motion.div>
     </div>
   );
 }
