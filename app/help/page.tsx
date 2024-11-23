@@ -190,11 +190,11 @@ export default function HelpCenterPage() {
                     <Accordion
                       type="single"
                       collapsible
-                      className="w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-8"
+                      className="w-full max-w-3xl px-4 sm:px-6 lg:px-8"
                     >
                     {faqs.map((faq, index) => (
                         <AccordionItem key={index} value={`item-${index}`}>
-                        <AccordionTrigger className="no-underline hover:no-underline">
+                        <AccordionTrigger className="no-underline hover:no-underline text-left">
                             {faq.question}
                         </AccordionTrigger>
                         <AccordionContent>{faq.answer}</AccordionContent>
